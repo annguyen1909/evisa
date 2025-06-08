@@ -1,5 +1,3 @@
-import Navbar from "./components/Navbar";
-import TopBanner from "./components/TopBanner";
 import Hero from "./components/Hero";
 import CheckEligibility from "./components/CheckEligibility";
 import TopDestinations from "./components/TopDestinations";
