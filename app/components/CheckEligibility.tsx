@@ -29,7 +29,7 @@ export default function CheckEligibility() {
   };
 
   return (
-    <section className="w-full max-w-4xl mx-auto py-12 px-4">
+    <section className="w-full max-w-4xl mx-auto pt-12 px-4">
       <h2 className="text-2xl font-semibold mb-6 text-center">Check Your Visa Eligibility</h2>
       <form
         onSubmit={(e) => {

@@ -1,76 +1,116 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { Combobox } from "@headlessui/react";
-import { cn } from "@/lib/utils";
-import { COUNTRIES_DATA } from "@/lib/constants";
+import * as React from "react"
+import { CheckIcon, ChevronsUpDownIcon } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+
+import { COUNTRIES_DATA } from "@/lib/constants"
 
 interface CountrySearchProps {
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  placeholder?: string;
+  value: string
+  onChange: (value: string) => void
+  placeholder?: string
 }
 
-export default function CountrySearch({ value, onChange, placeholder }: CountrySearchProps) {
-  const [query, setQuery] = React.useState(value);
+export default function CountrySearch({
+  value,
+  onChange,
+  placeholder = "Select a country...",
+}: CountrySearchProps) {
+  const [open, setOpen] = React.useState(false)
+  const [query, setQuery] = React.useState("")
 
-  // Filter countries by query
-  const filteredCountries =
-    query === ""
-      ? COUNTRIES_DATA
-      : COUNTRIES_DATA.filter((country) =>
-          country.name.toLowerCase().includes(query.toLowerCase())
-        );
+  const filteredCountries = COUNTRIES_DATA.filter((country) =>
+    country.name.toLowerCase().includes(query.toLowerCase())
+  )
 
   return (
-    <Combobox
-      value={query}
-      onChange={(value: string | null) => setQuery(value ?? "")}
-    >
-      <div className="relative w-full">
-        <Combobox.Input
-          className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          displayValue={(country: string) => country}
-          onChange={(event) => {
-            setQuery(event.target.value);
-            onChange(event);
-          }}
-          placeholder={placeholder || "Select a country"}
-        />
-        {filteredCountries.length > 0 && query !== "" && (
-          <Combobox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-            {filteredCountries.map((country) => (
-              <Combobox.Option
-                key={country.code}
-                value={country.name}
-                className={({ active }) =>
-                  cn(
-                    "relative cursor-pointer select-none py-2 pl-3 pr-9",
-                    active ? "bg-indigo-600 text-white" : "text-gray-900"
-                  )
-                }
-              >
-                {({ selected, active }) => (
-                  <>
-                    <span className={`block truncate ${selected ? "font-semibold" : ""}`}>
-                      {country.name}
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <Button
+          variant="outline"
+          role="combobox"
+          aria-expanded={open}
+          className="w-[470px] max-md:w-[270px] justify-between"
+        >
+          {value
+            ? COUNTRIES_DATA.find((c) => c.name === value)?.name
+            : placeholder}
+          <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-[470px] max-md:w-[270px] p-0">
+        <Command>
+          <CommandInput
+            placeholder="Search country..."
+            value={query}
+            onValueChange={setQuery}
+          />
+          <CommandList>
+            <CommandEmpty>No country found.</CommandEmpty>
+            <CommandGroup>
+              {filteredCountries.map((country) => {
+                const matchIndex = country.name
+                  .toLowerCase()
+                  .indexOf(query.toLowerCase())
+
+                const beforeMatch = country.name.slice(0, matchIndex)
+                const matchText = country.name.slice(
+                  matchIndex,
+                  matchIndex + query.length
+                )
+                const afterMatch = country.name.slice(matchIndex + query.length)
+
+                return (
+                  <CommandItem
+                    key={country.code}
+                    value={country.name}
+                    onSelect={(currentValue) => {
+                      onChange(currentValue === value ? "" : currentValue)
+                      setQuery("")
+                      requestAnimationFrame(() => setOpen(false))
+                    }}
+                  >
+                    <CheckIcon
+                      className={cn(
+                        "mr-2 h-4 w-4",
+                        value === country.name ? "opacity-100" : "opacity-0"
+                      )}
+                    />
+                    <span>
+                      {matchIndex >= 0 ? (
+                        <>
+                          {beforeMatch}
+                          <span className="font-medium text-blue-500">{matchText}</span>
+                          {afterMatch}
+                        </>
+                      ) : (
+                        country.name
+                      )}
                     </span>
-                    {selected && (
-                      <span
-                        className={`absolute inset-y-0 right-0 flex items-center pr-4 ${
-                          active ? "text-white" : "text-indigo-600"
-                        }`}
-                      >
-                        ✓
-                      </span>
-                    )}
-                  </>
-                )}
-              </Combobox.Option>
-            ))}
-          </Combobox.Options>
-        )}
-      </div>
-    </Combobox>
-  );
+                  </CommandItem>
+                )
+              })}
+
+            </CommandGroup>
+          </CommandList>
+        </Command>
+      </PopoverContent>
+    </Popover>
+  )
 }

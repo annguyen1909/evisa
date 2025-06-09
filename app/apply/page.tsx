@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import VisaFeeCalculator from "@/components/shared/VisaFeeCalculator";
 import { COUNTRIES_DATA } from "@/lib/constants";
+import VisaFeeDisplay from "@/components/shared/VisaFeeDisplay";
 
 export default function ApplyPage() {
   const [nationality, setNationality] = useState("");
@@ -79,11 +80,11 @@ export default function ApplyPage() {
         <section className="p-4 bg-white rounded shadow">
           <h2 className="text-lg font-semibold mb-2">Visa Fee Calculator</h2>
           {destinationCountry ? (
-            <VisaFeeCalculator
+            <VisaFeeDisplay
               country={{
                 code: destinationCountry.code,
                 name: destinationCountry.name,
-                govFee: Number(destinationCountry.govFee),
+                govFee: 49,
                 touristVisa: Number(destinationCountry.touristVisa),
                 businessVisa: Number(destinationCountry.businessVisa),
                 serviceFee: Number(destinationCountry.serviceFee),

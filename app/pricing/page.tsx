@@ -5,38 +5,43 @@ import CountrySearch from "@/components/shared/CountrySearch";
 import VisaFeeCalculator from "@/components/shared/VisaFeeCalculator";
 import { COUNTRIES_DATA } from "@/lib/constants"; // Country data
 
+
 import { Popover } from "@headlessui/react";
 import { Button } from "@/components/ui/button";
 
 export default function PricingPage() {
+
+
   const [searchCountry, setSearchCountry] = useState("");
+  const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const [showCalculator, setShowCalculator] = useState(false);
+
   type Country = {
     code: string;
     name: string;
     flag: string;
-    govFee: string;
-    touristVisa: string;
-    businessVisa: string;
-    serviceFee: string;
+    govFee: number;
+    touristVisa: number;
+    businessVisa: number;
+    serviceFee: number;
     tourGroupSupport: string;
   };
-  const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
+
 
   function handleCheckNow() {
-    const found = COUNTRIES_DATA.find((c) =>
-      c.name.toLowerCase().includes(searchCountry.trim().toLowerCase())
+    const inputLower = searchCountry?.toLowerCase?.() || "";
+    const foundCountry = COUNTRIES_DATA.find(
+      (country) => country.name.toLowerCase() === inputLower
     );
-
-    if (found) {
-      setSelectedCountry(found);
+    if (foundCountry) {
       setShowCalculator(true);
+      setSelectedCountry(foundCountry ?? null);
     } else {
       setShowCalculator(false);
-      setSelectedCountry(null);
-      alert("Please enter a valid country name");
+      alert("Please select a valid country from the list");
     }
   }
+
 
   return (
     <main className="max-w-7xl mx-auto px-6 py-12">
@@ -46,9 +51,10 @@ export default function PricingPage() {
         <div className="flex justify-center items-center gap-4 max-w-md mx-auto">
           <CountrySearch
             value={searchCountry}
-            onChange={(e) => setSearchCountry(e.target.value)}
+            onChange={(countryName) => setSearchCountry(countryName)}
             placeholder="Enter country name"
           />
+
           <button
             onClick={handleCheckNow}
             className="bg-black text-white px-6 py-2 rounded-md hover:bg-gray-700 transition"
@@ -63,7 +69,8 @@ export default function PricingPage() {
         <VisaFeeCalculator
           country={{
             ...selectedCountry,
-            govFee: Number(selectedCountry.govFee),
+            name: selectedCountry.name,
+            govFee: 49,
             touristVisa: Number(selectedCountry.touristVisa),
             businessVisa: Number(selectedCountry.businessVisa),
             serviceFee: Number(selectedCountry.serviceFee),

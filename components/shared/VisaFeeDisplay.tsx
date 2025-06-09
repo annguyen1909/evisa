@@ -130,9 +130,6 @@ export default function VisaFeeCalculator({ country }: VisaFeeCalculatorProps) {
               <span>Total Fee - ${totalFee}</span>
             </span>
           </p>
-          <Button type="submit" className="mt-4 w-full">
-            Apply Now
-          </Button>
         </div>
       </form>
     </div>

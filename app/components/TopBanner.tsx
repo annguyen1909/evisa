@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function TopBanner() {
   return (
-    <div className="w-full bg-gray-100 flex justify-between items-center px-6 py-3 border-b">
-      <div className="text-sm text-gray-700 space-y-1">
+    <div className="w-full bg-gray-100 flex justify-between items-center px-6 py-1.5 border-b">
+      <div className="text-sm flex gap-4 text-gray-700">
         <p>Your Trusted eVisa Solution</p>
         <p>Fast, Secure & Reliable</p>
       </div>

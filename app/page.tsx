@@ -10,7 +10,6 @@ export default function LandingPage() {
   return (
     <main className="flex flex-col items-center">
       <Hero />
-      <CheckEligibility />
       <TopDestinations />
       <AllVisaTypes />
       <VisaSteps />

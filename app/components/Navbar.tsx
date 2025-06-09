@@ -17,7 +17,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-full sticky z-10 top-0 bg-white shadow-sm px-6 py-4 flex justify-between items-center border-b">
+    <nav className="w-full sticky z-10 top-0 bg-white shadow-md px-6 py-4 flex justify-between items-center border-b">
       <Link href="/" className="relative w-28 h-10">
         <Image
           src="/images/logo.png"  // your logo path
@@ -34,7 +34,7 @@ export default function Navbar() {
           <Link
             key={item.label}
             href={item.href}
-            className="text-gray-700 hover:text-primary transition"
+            className="text-gray-700 text-xl hover:text-primary transition"
             onClick={() => setIsOpen(false)} // close menu if any link clicked (optional)
           >
             {item.label}
