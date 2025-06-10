@@ -1,5 +1,5 @@
 import Hero from "./components/Hero";
-import CheckEligibility from "./components/CheckEligibility";
+import CheckEligibility from "../components/shared/CheckEligibility";
 import TopDestinations from "./components/TopDestinations";
 import AllVisaTypes from "./components/AllVisaTypes";
 import VisaSteps from "./components/VisaSteps";

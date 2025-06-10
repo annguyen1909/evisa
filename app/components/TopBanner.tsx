@@ -4,14 +4,14 @@ import Link from "next/link";
 
 export default function TopBanner() {
   return (
-    <div className="w-full bg-gray-100 flex justify-between items-center px-6 py-1.5 border-b">
-      <div className="text-sm flex gap-4 text-gray-700">
-        <p>Your Trusted eVisa Solution</p>
-        <p>Fast, Secure & Reliable</p>
+    <div className="w-full bg-[#16610E] flex justify-between items-center px-6 py-1.5 border-b max-md:hidden">
+      <div className="text-sm flex gap-8 text-white">
+        <p>We are available <span className="text-[#FED16A]">24/7</span> at + 1 888 888 888</p>
+        <p>Chat with Our Experts</p>
       </div>
       <div className="flex gap-3">
         <Button variant="secondary">Check Visa Status</Button>
-        <Button>
+        <Button className="bg-[#D9D9D966] hover:bg-[#b6b6b666] transition-all duration-300">
           <Link href="/login" className="text-white">
             Log In
           </Link>
@@ -20,3 +20,4 @@ export default function TopBanner() {
     </div>
   );
 }
+
