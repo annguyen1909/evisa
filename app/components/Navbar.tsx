@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronRight } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -23,9 +23,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-full sticky z-10 top-0 bg-white shadow-md p-6 py-2.5 flex justify-evenly items-center border-b max-lg:justify-between">
+    <nav className="w-full sticky z-10 top-0 bg-white shadow-md p-6 py-2.5 flex justify-between items-center border-b lg:justify-evenly max-md:justify-between">
       {/* Logo */}
-      <Link href="/" className="w-42 h-10">
+      <Link href="/" className="w-42 md:mr-12 h-10 max-md:m-2">
         <div className="relative w-full h-full ml-2 gap-2 flex items-center">
           <Image
             src="/images/logo.png"
@@ -53,7 +53,7 @@ export default function Navbar() {
             {navItems.map((item) => (
               <NavigationMenuItem key={item.label}>
                 <Link href={item.href} passHref>
-                  <NavigationMenuTrigger className="text-gray-700 text-md">
+                  <NavigationMenuTrigger className="text-gray-700 text-lg cursor-pointer">
                     {item.label}
                   </NavigationMenuTrigger>
                 </Link>
@@ -61,7 +61,7 @@ export default function Navbar() {
             ))}
           </NavigationMenuList>
         </NavigationMenu>
-        <Button className="bg-[#16610E] px-6 py-7 text-lg">Apply Now</Button>
+        <Button className="bg-[#16610E] hover:bg-[#16610E]/80 text-white cursor-pointer px-6 py-7 text-lg">Apply Now</Button>
       </div>
 
       {/* Mobile menu button */}
@@ -75,19 +75,29 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-white border-t border-gray-200 shadow-md lg:hidden">
-          <nav className="flex flex-col p-4 space-y-3">
+        <div className="absolute top-full left-0 w-full bg-white border-t p-4 border-gray-200 shadow-md lg:hidden">
+          <p className="text-gray-600 font-semibold pb-2">MENU</p>
+          <nav className="flex flex-col bg-gray-100 rounded-lg p-4 space-y-3">
             {navItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="text-gray-700 hover:text-primary transition"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.label}
-              </Link>
+              <div key={item.label} className="flex flex-col gap-1">
+
+                <div className="flex justify-between items-center">
+                  <Link
+
+                    href={item.href}
+                    className="text-gray-600 p-1 font-semibold uppercase hover:text-primary transition"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                  <ChevronRight className="w-4 h-4" />
+                </div>
+                <hr className="mt-1 w-full" />
+              </div>
             ))}
-            <Button onClick={() => setIsOpen(false)}>Apply</Button>
+            <div className="flex justify-center">
+              <Button className="bg-[#16610E] hover:bg-[#16610E]/80 text-white mt-1 py-6 w-1/3" onClick={() => setIsOpen(false)}>Apply</Button>
+            </div>
           </nav>
         </div>
       )}

@@ -25,7 +25,7 @@ export default function Hero() {
       style={{
         backgroundImage: `url(${backgroundImages[currentImageIndex]})`,
       }}
-      className="w-full relative bg-cover bg-center bg-no-repeat p-14 text-center flex flex-col items-center gap-24 max-md:gap-12 max-md:p-16 text-white transition-all duration-1000 ease-in-out"
+      className="w-full overflow-hidden relative bg-cover bg-center bg-no-repeat p-14 z-0 text-center flex flex-col items-center gap-24 max-md:gap-12 max-md:p-16 text-white transition-all duration-1000 ease-in-out"
     >
       <div>
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">

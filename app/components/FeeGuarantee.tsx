@@ -1,36 +1,61 @@
+import { Button } from "@/components/ui/button";
+
 export default function FeeGuarantee() {
   return (
-    <section className="w-full max-w-6xl mx-auto py-12 px-6 bg-indigo-50 rounded-lg shadow-md mt-16">
-      <h2 className="text-3xl font-bold text-indigo-700 mb-6 text-center">
-        Fee Guarantee & Transparency
+    <section className="w-full max-w-6xl mx-auto py-12 px-6 rounded-lg mt-4">
+      <h2 className="text-3xl font-bold text-[#16610E] mb-6 text-center">
+        No rush fees. No hidden costs.
       </h2>
-      <p className="max-w-3xl mx-auto text-center text-gray-700 mb-8 leading-relaxed">
-        We guarantee transparent and fair pricing with no hidden fees. Our
-        service fees include all government charges and processing costs.
+      <p className="max-w-3xl mx-auto text-center text-[#16610E] mb-8 leading-relaxed">
+        Just one flat service fee of <span className="font-bold">$49.99 per passenger</span>
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        <div className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
-          <h3 className="text-xl font-semibold text-indigo-600 mb-2">No Hidden Fees</h3>
+      {/* Cards and Symbols */}
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] items-center gap-4 md:gap-8 text-center">
+        {/* Card 1 */}
+        <div className="p-4 h-full bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+          <h1 className="text-2xl font-bold text-[#16610E] mb-2">1</h1>
+          <h3 className="text-lg font-semibold text-[#16610E] whitespace-nowrap mb-2">Government Application Fees</h3>
           <p className="text-gray-600">
-            What you see is what you pay — no surprise costs at any stage.
+            This fee covers the cost of your eVisa application, as required by the government of your chosen destination.
           </p>
+          <Button className="mt-4 mb-2 w-3/4 bg-[#16610E] hover:bg-[#16610E]/80 text-white">Check Visa Fees</Button>
         </div>
 
-        <div className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
-          <h3 className="text-xl font-semibold text-indigo-600 mb-2">Price Match Promise</h3>
+        {/* "+" Symbol */}
+        <div className="md:block text-3xl font-bold text-[#16610E]">+</div>
+
+        {/* Card 2 */}
+        <div className="p-4 h-full bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+          <h1 className="text-2xl font-bold text-[#065BB9] mb-2">2</h1>
+          <h3 className="text-lg font-semibold text-[#065BB9] mb-2">Our Service Fees</h3>
           <p className="text-gray-600">
-            Found a lower price elsewhere? We’ll match it without compromising service.
+            Enjoy 24/7 support, an 80% approval rate, and full eVisa assistance — all for one flat, transparent fee.
           </p>
+          <Button className="mt-4 mb-2 w-3/4 bg-[#065BB9] hover:bg-[#065BB9]/80 text-white">$49.99 per passenger</Button>
         </div>
 
-        <div className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
-          <h3 className="text-xl font-semibold text-indigo-600 mb-2">Full Refund Guarantee</h3>
+        {/* "=" Symbol */}
+        <div className="md:block text-3xl font-bold text-[#16610E]">=</div>
+
+        {/* Card 3 */}
+        <div className="p-4 h-full bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+          <h1 className="text-2xl font-bold text-[#CB6601] mb-2">Total Balance</h1>
+          <h3 className="text-lg font-semibold text-[#CB6601] mb-2">You have to pay</h3>
           <p className="text-gray-600">
-            If your visa is rejected, you get a full refund — no questions asked.
+            Flat-rate pricing with zero hidden fees — no extra charges for urgency, transparency you can count on.
           </p>
+          <Button className="mt-4 mb-2 w-3/4 bg-[#CB6601] hover:bg-[#CB6601]/80 text-white">Apply Now</Button>
         </div>
       </div>
+
+      <h2 className="text-2xl font-bold text-[#16610E] mt-8 text-center">
+        Rejected? No worries — you get your service fee back.
+      </h2>
+      <h2 className="text-2xl font-bold text-[#16610E] mt-6 text-center">
+        Guaranteed!
+      </h2>
+      <h3 className="text-lg font-bold text-[#CB6601] mt-6 text-center">Want to know more? Read our full refund policy here.</h3>
     </section>
   );
 }

@@ -61,7 +61,7 @@ const visaTypes: VisaType[] = [
 export default function AllVisaTypes() {
   return (
     <section className="w-full max-w-7xl mx-auto py-6 px-4">
-      <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center text-[#16610E]">
+      <h2 className="text-2xl sm:text-3xl font-bold mb-12 text-center text-[#16610E]">
         All eVisa Types. One Place.
       </h2>
 
