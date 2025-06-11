@@ -45,7 +45,7 @@ function ComboBox({
 }) {
   const [open, setOpen] = React.useState(false);
   const selected = options.find((opt) => opt.value === value);
-
+  const inputRef = React.useRef<HTMLInputElement | null>(null);
   const variantClasses =
     variant === "left"
       ? "rounded-l-md rounded-r-none max-md:rounded-md"
@@ -70,7 +70,11 @@ function ComboBox({
         </PopoverTrigger>
         <PopoverContent className="w-full p-0">
           <Command>
-            <CommandInput placeholder={`Search ${label.toLowerCase()}...`} className="h-9" />
+            <CommandInput
+              placeholder={`Search ${label.toLowerCase()}...`}
+              onFocus={() => inputRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" })}
+              className="h-9"
+            />
             <CommandList>
               <CommandEmpty>No {label.toLowerCase()} found.</CommandEmpty>
               <CommandGroup>
