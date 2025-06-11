@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import VisaFeeCalculator from "@/components/shared/VisaFeeCalculator";
 import { COUNTRIES_DATA } from "@/lib/constants";
 import VisaFeeDisplay from "@/components/shared/VisaFeeDisplay";
 
