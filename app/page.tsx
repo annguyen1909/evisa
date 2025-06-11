@@ -4,6 +4,7 @@ import AllVisaTypes from "./components/AllVisaTypes";
 import VisaSteps from "./components/VisaSteps";
 import CustomerSupport from "./components/CustomerSupport";
 import FeeGuarantee from "./components/FeeGuarantee";
+import Sticky from "./components/Sticky";
 
 export default function LandingPage() {
   return (
@@ -14,6 +15,7 @@ export default function LandingPage() {
       <VisaSteps />
       <CustomerSupport />
       <FeeGuarantee />
+      <Sticky />
     </main>
   );
 }

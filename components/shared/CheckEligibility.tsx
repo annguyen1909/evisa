@@ -50,8 +50,8 @@ function ComboBox({
     variant === "left"
       ? "rounded-l-md rounded-r-none max-md:rounded-md"
       : variant === "right"
-      ? "rounded-none max-md:rounded-md"
-      : "rounded-md";
+        ? "rounded-none max-md:rounded-md"
+        : "rounded-md";
 
   return (
     <div className="w-full md:w-64">
@@ -115,7 +115,7 @@ export default function CheckEligibility() {
   };
 
   return (
-    <section className="w-full max-w-4xl mx-auto pt-12 px-4">
+    <section className="w-full max-w-4xl mx-auto pt-0 px-4 max-md:px-0">
       <h2 className="text-2xl font-semibold mb-6 text-center">Check Your Visa Eligibility</h2>
       <form
         onSubmit={(e) => {

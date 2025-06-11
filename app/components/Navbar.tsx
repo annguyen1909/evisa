@@ -23,7 +23,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-full sticky z-10 top-0 bg-white shadow-md p-6 py-2.5 flex justify-between items-center border-b lg:justify-evenly max-md:justify-between">
+    <nav className="w-full sticky z-20 top-0 bg-white shadow-md p-6 py-2.5 flex justify-between items-center border-b lg:justify-evenly max-md:justify-between">
       {/* Logo */}
       <Link href="/" className="w-42 md:mr-12 h-10 max-md:m-2">
         <div className="relative w-full h-full ml-2 gap-2 flex items-center">
@@ -53,7 +53,7 @@ export default function Navbar() {
             {navItems.map((item) => (
               <NavigationMenuItem key={item.label}>
                 <Link href={item.href} passHref>
-                  <NavigationMenuTrigger className="text-gray-700 text-lg cursor-pointer">
+                  <NavigationMenuTrigger className="text-gray-700 text-md cursor-pointer">
                     {item.label}
                   </NavigationMenuTrigger>
                 </Link>

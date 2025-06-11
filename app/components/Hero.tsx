@@ -10,7 +10,28 @@ export default function Hero() {
     '/images/hero/hero3.jpg',
     '/images/hero/hero4.jpg',
   ];
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(-1); // Start with no image
+
+
+  useEffect(() => {
+    const preloadImages = () => {
+      backgroundImages.forEach((src) => {
+        const img = new window.Image();
+        img.src = src;
+      });
+
+      // Once the first image is loaded, show it
+      const firstImg = new Image();
+      firstImg.src = backgroundImages[0];
+      firstImg.onload = () => {
+        setCurrentImageIndex(0);
+      };
+    };
+
+    preloadImages();
+  }, []);
+
+
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -23,10 +44,18 @@ export default function Hero() {
   return (
     <section
       style={{
-        backgroundImage: `url(${backgroundImages[currentImageIndex]})`,
+
       }}
       className="w-full overflow-hidden relative bg-cover bg-center bg-no-repeat p-14 z-0 text-center flex flex-col items-center gap-24 max-md:gap-12 max-md:p-16 text-white transition-all duration-1000 ease-in-out"
     >
+      {backgroundImages.map((src, index) => (
+        <div
+          key={src}
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? "opacity-100" : "opacity-0"
+            }`}
+          style={{ backgroundImage: `url(${src})`, zIndex: -1 }}
+        />
+      ))}
       <div>
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
           Welcome to UnitedEvisa - Trusted Global Visa Assistant
@@ -35,7 +64,7 @@ export default function Hero() {
           Simplify the way you get a Visa
         </p>
       </div>
-      <div>
+      <div className="">
         <CheckEligibility />
       </div>
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
