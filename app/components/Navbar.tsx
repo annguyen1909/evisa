@@ -10,7 +10,6 @@ import {
   NavigationMenuList,
   NavigationMenuItem,
   NavigationMenuTrigger,
-  NavigationMenuContent,
 } from "@/components/ui/navigation-menu";
 
 const navItems = [
@@ -24,9 +23,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-full sticky z-10 top-0 bg-white shadow-md p-6 py-2.5 flex justify-evenly items-center border-b max-md:justify-between">
+    <nav className="w-full sticky z-10 top-0 bg-white shadow-md p-6 py-2.5 flex justify-evenly items-center border-b max-lg:justify-between">
       {/* Logo */}
-      <Link href="/" className="w-28 h-10">
+      <Link href="/" className="w-42 h-10">
         <div className="relative w-full h-full ml-2 gap-2 flex items-center">
           <Image
             src="/images/logo.png"
@@ -47,8 +46,8 @@ export default function Navbar() {
         </div>
       </Link>
 
-      {/* Desktop Menu using NavigationMenu */}
-      <div className="hidden md:flex items-center gap-6">
+      {/* Desktop Menu */}
+      <div className="hidden lg:flex items-center gap-6">
         <NavigationMenu>
           <NavigationMenuList>
             {navItems.map((item) => (
@@ -67,7 +66,7 @@ export default function Navbar() {
 
       {/* Mobile menu button */}
       <button
-        className="md:hidden ml-4 text-gray-700"
+        className="lg:hidden ml-4 text-gray-700"
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? "Close menu" : "Open menu"}
       >
@@ -76,7 +75,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-white border-t border-gray-200 shadow-md md:hidden">
+        <div className="absolute top-full left-0 w-full bg-white border-t border-gray-200 shadow-md lg:hidden">
           <nav className="flex flex-col p-4 space-y-3">
             {navItems.map((item) => (
               <Link

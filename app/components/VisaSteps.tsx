@@ -1,33 +1,80 @@
 "use client";
 
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircleIcon } from "@heroicons/react/24/outline";
 
-const steps = [
-  { title: "Choose Destination", description: "Select your travel destination." },
-  { title: "Select Visa Type", description: "Pick the suitable visa for your trip." },
-  { title: "Fill Application", description: "Complete the visa application form." },
-  { title: "Submit Documents", description: "Upload necessary documents." },
-  { title: "Receive eVisa", description: "Get your eVisa via email." },
+type VisaType = {
+  name: string;
+  title: string;
+  description: string;
+  image?: string;
+};
+
+const visaTypes: VisaType[] = [
+  {
+    name: "1",
+    title: "Application Online",
+    description:
+      "Submit your eVisa application on our website",
+    image: "/images/steps/step1.png",
+  },
+  {
+    name: "2",
+    title: "Payment Online",
+    description:
+      "Secured payment system that accepts Cards, or Bank Transfer",
+    image: "/images/steps/step2.png",
+  },
+  {
+    name: "3",
+    title: "Submit Documents",
+    description:
+      "Submit and manage your required documents through our secured portal",
+    image: "/images/steps/step3.png",
+  },
+  {
+    name: "4",
+    title: "Receive Your eVisa",
+    description:
+      "Sit back and relax — we’ll deliver your eVisa straight to your inbox",
+    image: "/images/steps/step4.png",
+  },
 ];
 
-export default function VisaSteps() {
+export default function AllVisaTypes() {
   return (
-    <section className="w-full max-w-6xl mx-auto py-12 px-4">
-      <h2 className="text-3xl font-bold mb-10 text-center">eVisa Steps</h2>
-      <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0">
-        {steps.map(({ title, description }, index) => (
+    <section className="w-full max-w-7xl mx-auto py-6 px-4">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center text-[#16610E]">
+        4 Easy Steps to Get Your eVisa
+      </h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+        {visaTypes.map(({ name, title, description, image }) => (
           <Card
-            key={title}
-            className="flex-1 flex flex-col p-6
-                       transform transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
+            key={name}
+            className="flex flex-col h-full transition-transform gap-2 p-8 hover:scale-[1.02] hover:shadow-lg"
+            style={{ color: "#16610E" }}
           >
-            <CheckCircleIcon className="h-12 w-12 text-green-500 mb-4" />
             <CardHeader>
-              <CardTitle className="text-lg font-semibold">{`Step ${index + 1}: ${title}`}</CardTitle>
+              <CardTitle className="font-extrabold text-5xl sm:text-4xl text-center">
+                {name}
+              </CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="text-gray-600">{description}</p>
+            <CardContent className="px-0 mt-2 flex flex-col items-center">
+              <Image
+                src={image || "/images/steps/default.png"}
+                width={88}
+                height={87}
+                className="w-fit h-20 mb-4"
+                alt={`${name} flag`}
+              />
+              <CardTitle className="font-extrabold mb-2 text-center text-2xl sm:text-lg">
+                {title}
+              </CardTitle>
+              <p className="text-gray-600 text-sm text-center leading-relaxed">
+                {description}
+              </p>
             </CardContent>
           </Card>
         ))}

@@ -1,45 +1,130 @@
 "use client";
 
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { IdentificationIcon, GlobeAltIcon, DocumentCheckIcon } from "@heroicons/react/24/outline";
 
-const visaTypes = [
+type VisaType = {
+  name: string;
+  description: string;
+  color: string;
+  favorites?: { name: string; img: string }[];
+};
+
+const visaTypes: VisaType[] = [
   {
-    name: "Tourist eVisa",
-    icon: IdentificationIcon,
-    description: "Perfect for leisure trips up to 30 days.",
+    name: "TOURIST VISA",
+    description:
+      "This type of visa is used for the purpose of travelling to a country. It is also the most popular visa type that we help our customers to apply for.",
+    color: "#16610E",
+    favorites: [
+      { name: "Kenya", img: "/images/flags/kenya.png" },
+      { name: "Cambodia", img: "/images/flags/cambodia.png" },
+      { name: "Sri Lanka", img: "/images/flags/sri-lanka.png" },
+    ],
   },
   {
-    name: "Business eVisa",
-    icon: GlobeAltIcon,
-    description: "Ideal for business trips and meetings.",
+    name: "BUSINESS VISA",
+    description:
+      "This visa is issued to travelers transiting through a country en route elsewhere. It’s short-term, and many countries waive the need for it.",
+    color: "#065BB9",
+    favorites: [
+      { name: "Azerbaijan", img: "/images/flags/azerbaijan.png" },
+      { name: "Bahrain", img: "/images/flags/bahrain.png" },
+      { name: "India", img: "/images/flags/india.png" },
+    ],
   },
   {
-    name: "Transit eVisa",
-    icon: DocumentCheckIcon,
-    description: "For short layovers and transit stays.",
+    name: "TRANSIT VISA",
+    description:
+      "Medical visa is used for travelers who want to be treated under the system of medicine of a country. It is used by just some governments.",
+    color: "#CB6601",
+    favorites: [
+      { name: "Singapore", img: "/images/flags/singapore.png" },
+      { name: "Rwanda", img: "/images/flags/rwanda.png" },
+      { name: "Tanzania", img: "/images/flags/tanzania.png" },
+    ],
+  },
+  {
+    name: "MEDICAL VISA",
+    description:
+      "Issued for patients seeking treatment abroad, this visa helps you access world-class healthcare while ensuring compliance with local laws.",
+    color: "#FED16A",
+    favorites: [
+      { name: "Thailand", img: "/images/flags/thailand.png" },
+      { name: "Malaysia", img: "/images/flags/malaysia.png" },
+      { name: "UK", img: "/images/flags/united-kingdom.png" },
+    ],
   },
 ];
 
 export default function AllVisaTypes() {
   return (
-    <section className="w-full max-w-6xl mx-auto py-12 px-4">
-      <h2 className="text-3xl font-bold mb-10 text-center">All eVisa Types</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {visaTypes.map(({ name, icon: Icon, description }) => (
+    <section className="w-full max-w-7xl mx-auto py-6 px-4">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center text-[#16610E]">
+        All eVisa Types. One Place.
+      </h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+        {visaTypes.map(({ name, description, color, favorites }) => (
           <Card
             key={name}
-            className="transform transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
+            className="flex flex-col h-full justify-between transition-transform hover:scale-[1.02] hover:shadow-lg"
+            style={{ color }}
           >
             <CardHeader>
-              <CardTitle className="flex items-center space-x-3">
-                <Icon className="h-6 w-6 text-indigo-600" />
-                <span>{name}</span>
+              <CardTitle className="font-extrabold text-lg sm:text-xl text-center">
+                {name}
               </CardTitle>
             </CardHeader>
+
             <CardContent>
-              <p className="text-gray-600 text-sm">{description}</p>
+              <p className="text-gray-600 text-sm text-center leading-relaxed">
+                {description}
+              </p>
             </CardContent>
+
+            <hr
+              className="h-px p-[1.5px] mx-6 rounded-xl bg-gray-200 border-0"
+              style={{ background: color }}
+            />
+
+            {favorites && (
+              <CardContent className="text-center">
+                <p className="font-bold mb-3" style={{ color }}>
+                  Favorite Destinations
+                </p>
+
+                <div className="flex justify-center gap-2 py-2 flex-wrap">
+                  {favorites.map(({ name, img }) => (
+                    <div
+                      key={name}
+                      className="flex flex-col items-center space-y-1 min-w-[64px]"
+                    >
+                      <Image
+                        src={img}
+                        width={56}
+                        height={40}
+                        className="w-14 h-10 object-contain"
+                        alt={`${name} flag`}
+                      />
+                      <span className="text-sm font-medium text-gray-600 whitespace-nowrap">
+                        {name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            )}
+
+            <div className="flex justify-center mb-0">
+              <Button
+                className="text-white w-4/5 sm:w-3/5 py-6 rounded-xl hover:opacity-90 transition"
+                style={{ backgroundColor: color }}
+              >
+                Apply Now
+              </Button>
+            </div>
           </Card>
         ))}
       </div>
