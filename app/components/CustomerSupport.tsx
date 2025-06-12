@@ -10,8 +10,8 @@ import Image from "next/image";
 
 export default function CustomerSupport() {
   return (
-    <section className="w-full mt-6 max-w-2xl md:max-w-6xl rounded-lg shadow-sm p-2 mx-auto bg-gradient-to-r from-[#FED16A]/50 to-[#FFF085]/50">
-      <div className="flex flex-col md:flex-row justify-evenly w-full p-2 md:p-6 gap-2 md:gap-12">
+    <section className="w-full mt-6 max-w-2xl md:max-w-6xl rounded-lg shadow-sm p-6 mx-auto bg-gradient-to-r from-[#FED16A]/50 to-[#FFF085]/50">
+      <div className="flex flex-col md:flex-row justify-evenly w-full py-6 md:p-6 gap-2 md:gap-12">
 
         {/* Left Section */}
         <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left">

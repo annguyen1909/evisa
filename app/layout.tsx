@@ -4,6 +4,7 @@ import "./globals.css";
 import TopBanner from "./components/TopBanner";
 import Navbar from "./components/Navbar";
 import { Footer } from "./components/Footer";
+import Sticky from "./components/Sticky";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,7 +44,7 @@ export default function RootLayout({
         <TopBanner />
         <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
