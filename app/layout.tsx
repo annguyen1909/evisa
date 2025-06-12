@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter, Roboto } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Roboto, Petrona, Manrope } from "next/font/google";
 import "./globals.css";
 import TopBanner from "./components/TopBanner";
 import Navbar from "./components/Navbar";
@@ -13,6 +13,16 @@ const geistSans = Geist({
 
 const roboto = Roboto({
   variable: "--font-roboto",
+  subsets: ["latin"],
+});
+
+  const petrona = Petrona({
+    variable: "--font-petrona",
+    subsets: ["latin"],
+  });
+
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 
@@ -39,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${roboto.variable} antialiased bg-[#FAF6E9]`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${roboto.variable} ${petrona.variable} ${manrope.variable} antialiased bg-[#FAF6E9]`}
       >
         <TopBanner />
         <Navbar />

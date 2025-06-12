@@ -10,6 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuItem,
   NavigationMenuTrigger,
+  NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 
 const navItems = [
@@ -23,7 +24,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-full sticky z-20 top-0 bg-white shadow-md p-6 py-2.5 flex justify-between items-center border-b lg:justify-evenly max-md:justify-between">
+    <nav className="w-full sticky z-20 top-0 bg-white shadow-md p-6 py-2.5 md:p-4 flex justify-between items-center border-b lg:justify-evenly max-md:justify-between">
       {/* Logo */}
       <Link href="/" className="w-42 md:mr-12 h-10 max-md:m-2">
         <div className="relative w-full h-full ml-2 gap-2 flex items-center">
@@ -52,11 +53,16 @@ export default function Navbar() {
           <NavigationMenuList>
             {navItems.map((item) => (
               <NavigationMenuItem key={item.label}>
-                <Link href={item.href} passHref>
-                  <NavigationMenuTrigger className="text-gray-700 text-md cursor-pointer">
+                <NavigationMenuLink href={item.href} className="relative overflow-hidden px-4 py-2 text-md cursor-pointer transition-all duration-300 bg-white
+               before:absolute before:inset-0 before:bg-[#16610E]
+               before:w-0 before:h-full before:transition-all before:duration-300 before:z-0 before:pointer-events-none 
+               hover:before:w-full hover:text-white rounded-sm
+               ">
+                  <div className="relative z-10 transition-all duration-300">
                     {item.label}
-                  </NavigationMenuTrigger>
-                </Link>
+                  </div>
+                </NavigationMenuLink>
+
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>

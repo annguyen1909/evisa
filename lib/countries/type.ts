@@ -4,6 +4,7 @@ export type Country = {
   description: string;
   welcomeMessage: string;
   flagUrl?: string;
+  roundedFlagUrl?: string;
   imageUrl?: string; // Optional image URL for the country
   welcomeImgUrl?: string;
   etaInfo: {

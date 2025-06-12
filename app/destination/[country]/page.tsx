@@ -58,22 +58,22 @@ export default async function CountryPage({ params }: Props) {
         <div>
             <section
                 id="country-hero"
-                className="w-full min-h-[30vh] lg:min-h-[33vh] relative bg-cover bg-center bg-no-repeat p-8 sm:p-16 flex flex-col justify-center items-center text-white text-center"
+                className="w-full min-h-[25vh] lg:min-h-[30vh] items-center relative bg-cover bg-center bg-no-repeat p-2 sm:p-16 flex flex-col justify-center text-white"
             >
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out -z-10"
                     style={{ backgroundImage: `url(${country.imageUrl})` }}
                 />
 
-                <div className="flex items-center gap-4">
+                <div className="flex flex-col max-w-5xl w-2/3 max-md:items-center gap-2">
                     <Image
                         src={`${country.flagUrl}`}
                         alt={`${country.name} Flag`}
                         width={50}
                         height={50}
-                        className="rounded shadow"
+                        className=""
                     />
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl uppercase font-bold">
+                    <h1 className="text-3xl font-inter sm:text-4xl md:text-5xl uppercase font-bold">
                         {country.name}
                     </h1>
                 </div>
@@ -82,41 +82,42 @@ export default async function CountryPage({ params }: Props) {
             {/* ABOUT SECTION */}
             <section
                 id="country-intro"
-                className="w-full bg-white mt-12 p-4 sm:p-8 max-w-5xl mx-auto text-center flex flex-col items-center gap-8"
+                className="w-full bg-white rounded-lg mt-12 p-4 sm:p-8 max-w-5xl mx-auto text-center flex flex-col items-center gap-8"
             >
                 <div className="flex flex-col items-center">
                     <Image
-                        src={`${country.flagUrl}`}
+                        src={`${country.roundedFlagUrl}`}
                         alt={`${country.name} Flag`}
                         width={50}
                         height={50}
                     />
-                    <h2 className="text-2xl sm:text-3xl font-bold uppercase mt-6 mb-4">
+                    <h2 className="text-2xl font-inter sm:text-3xl font-bold uppercase mt-6 mb-4">
                         About {country.name}
                     </h2>
-                    <p className="text-sm sm:text-base max-w-5xl">
+                    <p className="text-sm px-0 md:px-8 font-manrope sm:text-base max-w-5xl">
                         {country.description}
                     </p>
                 </div>
 
-                <div className="w-full flex flex-col md:flex-row md:justify-evenly gap-4">
+                <div className="w-full flex flex-col md:flex-row md:justify-between gap-0">
                     <div className="flex md:w-1/3 flex-row md:flex-col items-center gap-4 text-[#065BB9] font-bold text-xl text-center">
-                        <Dock size={60} />
+                        <Dock size={50} />
                         <p>Apply Online In 3 Steps</p>
                     </div>
                     <div className="flex md:w-1/3 flex-row md:flex-col items-center gap-4 text-[#CB6601] font-bold text-xl text-center">
-                        <Timer size={60} />
+                        <Timer size={50} />
                         <p>As soon as 1 Day</p>
                     </div>
                     <div className="flex md:w-1/3 flex-row md:flex-col items-center gap-4 text-[#cfac5a] font-bold text-xl text-center">
-                        <Send size={60} />
+                        <Send size={50} />
                         <p>Receive eTA by Email</p>
                     </div>
                 </div>
 
-                <Button className="bg-[#065BB9] hover:bg-[#065BB9]/80 px-8 py-8 text-white text-base sm:text-lg">
-                    Apply Now
-                </Button>
+                <button className="before:ease relative h-12 w-40 overflow-hidden text-white bg-[#166101] rounded-lg transition-all before:absolute before:top-1/2 before:h-0 before:w-64 before:origin-center before:-translate-x-20 before:rotate-45 before:bg-[#CB6601] before:duration-600 cursor-pointer hover:text-white hover:before:h-64 hover:before:-translate-y-32">
+                    <span className="relative z-10">Apply Now</span>
+                </button>
+
             </section>
 
             {/* WELCOME MESSAGE SECTION */}
@@ -125,10 +126,10 @@ export default async function CountryPage({ params }: Props) {
                 className="w-full bg-white p-8 rounded-lg max-w-5xl mt-12 mx-auto flex flex-col md:flex-row items-center gap-8"
             >
                 <div className="w-full md:w-3/5 flex flex-col gap-8">
-                    <h2 className="text-xl sm:text-3xl font-bold uppercase" style={{ fontFamily: 'Roboto' }}>
+                    <h2 className="text-xl font-inter sm:text-3xl font-bold uppercase">
                         Welcome to {country.name}
                     </h2>
-                    <p className="text-sm sm:text-base max-w-5xl" style={{ fontFamily: 'Roboto' }}>
+                    <p className="text-sm font-manrope sm:text-base max-w-5xl">
                         {country.welcomeMessage}
                     </p>
                     <div className="flex flex-col gap-5">
@@ -195,42 +196,42 @@ export default async function CountryPage({ params }: Props) {
                         <TabsContent key={tab.value} value={tab.value} className="mt-6">
                             <div className="flex flex-col lg:flex-row gap-6 items-center">
                                 <div className="max-w-3xl mx-auto flex flex-col gap-2 text-sm sm:text-base space-y-4" style={{ fontFamily: 'Roboto' }}>
-                                    <p>The {country.name} government requires 194 nationalities to get a {tab.visaType} to enter the country for Tourism. Now you can apply on our website easily and receive it by email.</p>
+                                    <p className='font-manrope'>The {country.name} government requires 194 nationalities to get a {tab.visaType} to enter the country for Tourism. Now you can apply on our website easily and receive it by email.</p>
                                     <div className='flex flex-col gap-2 border-1 border-gray-200 rounded-lg p-4'>
                                         <h2 className='text-lg font-semibold'>VISA SERVICE PACKAGE</h2>
-                                        <p>Our service helps travelers obtain travel documents, simplifying the process so that you can better prepare for the trip. The package includes:</p>
+                                        <p className='font-manrope'>Our service helps travelers obtain travel documents, simplifying the process so that you can better prepare for the trip. The package includes:</p>
                                         <div className='flex gap-2'>
                                             <SquareCheckBig className='w-6 h-6 text-[#16610E]' />
-                                            <p>Entry visa for a short period</p>
+                                            <p className='font-manrope'>Entry visa for a short period</p>
                                         </div>
                                         <div className='flex gap-2'>
                                             <SquareCheckBig className='w-6 h-6 text-[#16610E]' />
-                                            <p>Application form filling assistance</p>
+                                            <p className='font-manrope'>Application form filling assistance</p>
                                         </div>
                                         <div className='flex gap-2'>
                                             <SquareCheckBig className='w-6 h-6 text-[#16610E]' />
-                                            <p>Travel insurance consultant</p>
+                                            <p className='font-manrope'>Travel insurance consultant</p>
                                         </div>
                                         <div className='flex gap-2'>
                                             <SquareCheckBig className='w-6 h-6 text-[#16610E]' />
-                                            <p>Portal for real-time visa updates</p>
+                                            <p className='font-manrope'>Portal for real-time visa updates</p>
                                         </div>
                                         <div className='flex gap-2'>
                                             <SquareCheckBig className='w-6 h-6 text-[#16610E]' />
-                                            <p>24/7 online support team for any issues</p>
+                                            <p className='font-manrope'>24/7 online support team for any issues</p>
                                         </div>
                                         <div className='flex gap-2'>
                                             <SquareCheckBig className='w-6 h-6 text-[#16610E]' />
-                                            <p>Urgent case support, with added fees</p>
+                                            <p className='font-manrope'>Urgent case support, with added fees</p>
                                         </div>
                                     </div>
                                     <div className='flex flex-col gap-2 border-1 border-gray-200 rounded-lg p-4'>
                                         <h2 className='text-lg font-semibold'>ETA INFORMATION</h2>
                                         <ul className='list-disc list-inside'>
-                                            <li>Single Entry</li>
-                                            <li>Stay duration: 90 days</li>
-                                            <li>Government & Admin fee: US$ 95.00</li>
-                                            <li>Service fee:
+                                            <li className='font-manrope'>Single Entry</li>
+                                            <li className='font-manrope'>Stay duration: 90 days</li>
+                                            <li className='font-manrope'>Government & Admin fee: US$ 95.00</li>
+                                            <li className='font-manrope'>Service fee:
                                                 <button className="p-0 ml-2 bg-transparent border-none text-md underline text-blue-600 hover:text-blue-800 cursor-pointer">
                                                     See More
                                                 </button>
@@ -239,7 +240,7 @@ export default async function CountryPage({ params }: Props) {
                                     </div>
                                     <div id='steps' className='flex flex-col gap-2'>
                                         <p className='font-semibold uppercase text-lg'>HOW TO APPLY FOR {country.name} TOURIST ETA?</p>
-                                        <p>Fantastic! Kenya allows you to apply for an eTA (Electronic Travel Authorization) and now, you can easily apply for this eTA through our website following 3 simple steps below:</p>
+                                        <p className='font-manrope'>Fantastic! Kenya allows you to apply for an eTA (Electronic Travel Authorization) and now, you can easily apply for this eTA through our website following 3 simple steps below:</p>
                                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
                                             {visaSteps.map(({ name, title, description, image }) => (
                                                 <Card
