@@ -58,14 +58,14 @@ export default async function CountryPage({ params }: Props) {
         <div>
             <section
                 id="country-hero"
-                className="w-full min-h-[25vh] lg:min-h-[30vh] items-center relative bg-cover bg-center bg-no-repeat p-2 sm:p-16 flex flex-col justify-center text-white"
+                className="w-full min-h-[25vh] lg:min-h-[35vh] items-center relative bg-cover bg-center bg-no-repeat p-2 sm:p-16 flex flex-col justify-center text-white"
             >
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out -z-10"
                     style={{ backgroundImage: `url(${country.imageUrl})` }}
                 />
 
-                <div className="flex flex-col max-w-5xl w-2/3 max-md:items-center gap-2">
+                <div className="flex flex-col max-w-5xl md:max-w-7xl w-2/3 max-md:items-center gap-2">
                     <Image
                         src={`${country.flagUrl}`}
                         alt={`${country.name} Flag`}
@@ -73,7 +73,7 @@ export default async function CountryPage({ params }: Props) {
                         height={50}
                         className=""
                     />
-                    <h1 className="text-3xl font-inter sm:text-4xl md:text-5xl uppercase font-bold">
+                    <h1 className="text-3xl font-manrope sm:text-4xl md:text-6xl uppercase font-semibold">
                         {country.name}
                     </h1>
                 </div>
@@ -82,7 +82,8 @@ export default async function CountryPage({ params }: Props) {
             {/* ABOUT SECTION */}
             <section
                 id="country-intro"
-                className="w-full bg-white rounded-lg mt-12 p-4 sm:p-8 max-w-5xl mx-auto text-center flex flex-col items-center gap-8"
+                className="w-full bg-white rounded-lg mt-12 p-4 sm:p-8 max-w-5xl md:max-w-7xl mx-auto text-center flex flex-col items-center gap-8"
+                style={{ backgroundImage: `url(${country.imageUrl})` }}
             >
                 <div className="flex flex-col items-center">
                     <Image
@@ -94,7 +95,7 @@ export default async function CountryPage({ params }: Props) {
                     <h2 className="text-2xl font-inter sm:text-3xl font-bold uppercase mt-6 mb-4">
                         About {country.name}
                     </h2>
-                    <p className="text-sm px-0 md:px-8 font-manrope sm:text-base max-w-5xl">
+                    <p className="text-md px-0 md:px-8 font-manrope sm:text-xl max-w-5xl md:max-w-7xl">
                         {country.description}
                     </p>
                 </div>
@@ -114,7 +115,7 @@ export default async function CountryPage({ params }: Props) {
                     </div>
                 </div>
 
-                <button className="before:ease relative h-12 w-40 overflow-hidden text-white bg-[#166101] rounded-lg transition-all before:absolute before:top-1/2 before:h-0 before:w-64 before:origin-center before:-translate-x-20 before:rotate-45 before:bg-[#CB6601] before:duration-600 cursor-pointer hover:text-white hover:before:h-64 hover:before:-translate-y-32">
+                <button className="relative flex h-[50px] w-40 items-center justify-center overflow-hidden bg-[#16610E] cursor-pointer rounded-lg text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-[#CB6601] before:duration-600 before:ease-out hover:before:h-56 hover:before:w-56">
                     <span className="relative z-10">Apply Now</span>
                 </button>
 
@@ -123,42 +124,42 @@ export default async function CountryPage({ params }: Props) {
             {/* WELCOME MESSAGE SECTION */}
             <section
                 id="welcome-message"
-                className="w-full bg-white p-8 rounded-lg max-w-5xl mt-12 mx-auto flex flex-col md:flex-row items-center gap-8"
+                className="w-full bg-white p-8 rounded-lg max-w-5xl md:max-w-7xl mt-12 mx-auto flex flex-col md:flex-row items-center gap-8"
             >
                 <div className="w-full md:w-3/5 flex flex-col gap-8">
                     <h2 className="text-xl font-inter sm:text-3xl font-bold uppercase">
                         Welcome to {country.name}
                     </h2>
-                    <p className="text-sm font-manrope sm:text-base max-w-5xl">
+                    <p className="text-md font-manrope sm:text-xl max-w-5xl md:max-w-7xl">
                         {country.welcomeMessage}
                     </p>
                     <div className="flex flex-col gap-5">
                         <div className="flex gap-4 items-start">
                             <Cloud className="w-6 h-6 text-[#065BB9]" />
-                            <p style={{ fontFamily: 'Roboto' }}>
-                                <span className="text-[#065BB9] font-semibold">Climate:</span> {country.info.climate}
+                            <p className='text-lg md:text-xl font-manrope'>
+                                <span className="text-[#065BB9] font-manrope font-semibold">Climate:</span> {country.info.climate}
                             </p>
                         </div>
                         <div className="flex gap-4 items-start">
                             <Earth className="w-6 h-6 text-[#CB6601]" />
-                            <p style={{ fontFamily: 'Roboto' }}>
-                                <span className="text-[#CB6601] font-semibold">Language:</span> {country.info.language}
+                            <p className='text-lg md:text-xl font-manrope'>
+                                <span className="text-[#CB6601] font-manrope font-semibold">Language:</span> {country.info.language}
                             </p>
                         </div>
                         <div className="flex gap-4 items-start">
                             <CircleDollarSign className="w-6 h-6 text-[#cfac5a]" />
-                            <p style={{ fontFamily: 'Roboto' }}>
-                                <span className="text-[#cfac5a] font-semibold">Currency:</span> {country.info.currency}
+                            <p className='text-lg md:text-xl font-manrope'>
+                                <span className="text-[#cfac5a] font-manrope font-semibold">Currency:</span> {country.info.currency}
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="w-full md:w-2/5 flex justify-center">
+                <div className=" w-full md:w-3/5 flex justify-center">
                     <Image
                         src={`${country.welcomeImgUrl}`}
                         alt={`${country.name} Welcome`}
-                        width={400}
-                        height={300}
+                        width={600}
+                        height={400}
                         className="rounded-3xl"
                     />
                 </div>
@@ -166,11 +167,10 @@ export default async function CountryPage({ params }: Props) {
 
             <section
                 id="visa-type"
-                className="w-full bg-white p-8 rounded-lg max-w-5xl mt-12 mx-auto flex flex-col gap-8 px-4 sm:px-8"
+                className="w-full bg-white p-8 rounded-lg max-w-5xl md:max-w-7xl mt-12 mx-auto flex flex-col gap-8 px-4 sm:px-8"
             >
                 <h2
-                    className="text-xl sm:text-3xl font-bold uppercase text-center"
-                    style={{ fontFamily: 'Roboto' }}
+                    className="text-xl sm:text-3xl font-bold uppercase font-inter text-center"
                 >
                     Visa Types for {country.name}
                 </h2>
@@ -186,8 +186,8 @@ export default async function CountryPage({ params }: Props) {
                                 } as React.CSSProperties}
                             >
                                 <div className="flex flex-col items-center">
-                                    <p className="uppercase text-lg font-bold">{tab.title}</p>
-                                    <p className="font-medium">{tab.subtitle}</p>
+                                    <p className="uppercase text-xl font-bold">{tab.title}</p>
+                                    <p className="text-lg">{tab.subtitle}</p>
                                 </div>
                             </TabsTrigger>
                         ))}
@@ -195,7 +195,7 @@ export default async function CountryPage({ params }: Props) {
                     {country.visaTabs.map((tab) => (
                         <TabsContent key={tab.value} value={tab.value} className="mt-6">
                             <div className="flex flex-col lg:flex-row gap-6 items-center">
-                                <div className="max-w-3xl mx-auto flex flex-col gap-2 text-sm sm:text-base space-y-4" style={{ fontFamily: 'Roboto' }}>
+                                <div className="max-w-4xl mx-auto flex flex-col gap-2 text-md sm:text-xl space-y-4" style={{ fontFamily: 'Roboto' }}>
                                     <p className='font-manrope'>The {country.name} government requires 194 nationalities to get a {tab.visaType} to enter the country for Tourism. Now you can apply on our website easily and receive it by email.</p>
                                     <div className='flex flex-col gap-2 border-1 border-gray-200 rounded-lg p-4'>
                                         <h2 className='text-lg font-semibold'>VISA SERVICE PACKAGE</h2>
@@ -240,7 +240,7 @@ export default async function CountryPage({ params }: Props) {
                                     </div>
                                     <div id='steps' className='flex flex-col gap-2'>
                                         <p className='font-semibold uppercase text-lg'>HOW TO APPLY FOR {country.name} TOURIST ETA?</p>
-                                        <p className='font-manrope'>Fantastic! Kenya allows you to apply for an eTA (Electronic Travel Authorization) and now, you can easily apply for this eTA through our website following 3 simple steps below:</p>
+                                        <p className='font-manrope mb-4'>Fantastic! Kenya allows you to apply for an eTA (Electronic Travel Authorization) and now, you can easily apply for this eTA through our website following 3 simple steps below:</p>
                                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
                                             {visaSteps.map(({ name, title, description, image }) => (
                                                 <Card
@@ -264,7 +264,7 @@ export default async function CountryPage({ params }: Props) {
                                                         <CardTitle className="font-extrabold mb-2 text-center text-2xl sm:text-lg">
                                                             {title}
                                                         </CardTitle>
-                                                        <p className="text-gray-600 text-sm text-center leading-relaxed">
+                                                        <p className="text-gray-600 text-lg text-center leading-relaxed">
                                                             {description}
                                                         </p>
                                                     </CardContent>
@@ -272,7 +272,7 @@ export default async function CountryPage({ params }: Props) {
                                             ))}
                                         </div>
                                         <p className='text-center text-lg font-semibold mt-4 text-[#16610E]'>GET A ETA WITHIN 1 WORKING DAY</p>
-                                        <Button className='bg-[#16610E] mt-2 uppercase mx-auto hover:bg-[#16610E]/80 w-1/3 cursor-pointer px-8 py-6 text-white text-base sm:text-lg'>
+                                        <Button className='bg-[#16610E] mt-2 uppercase mx-auto hover:bg-[#16610E]/80 w-1/3 cursor-pointer px-8 py-6 text-white text-xl sm:text-lg'>
                                             Apply Now
                                         </Button>
                                     </div>
@@ -282,11 +282,11 @@ export default async function CountryPage({ params }: Props) {
                     ))}
                 </Tabs>
             </section>
-            <section id='gvc-support' className='w-full bg-white p-8 rounded-lg max-w-5xl mt-12 mx-auto flex flex-col gap-8 px-4 sm:px-8'>
+            <section id='gvc-support' className='w-full bg-white p-8 rounded-lg max-w-5xl md:max-w-7xl mt-12 mx-auto flex flex-col gap-8 px-4 sm:px-8'>
                 <h2 className='text-xl sm:text-3xl font-bold uppercase text-center' style={{ fontFamily: 'Roboto' }}>
                     GVC Support
                 </h2>
-                <p className='text-sm sm:text-base max-w-5xl'>
+                <p className='text-md sm:text-xl max-w-5xl md:max-w-7xl'>
                     {country.gvcSupport.description}
                 </p>
                 <div className='flex flex-col gap-2'>
