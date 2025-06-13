@@ -53,13 +53,13 @@ export default function VisaFeeCalculator({ country }: VisaFeeCalculatorProps) {
   };
 
   return (
-    <div className="max-w-xl mx-auto mt-10 p-6 border rounded-lg shadow-md bg-white">
-      <h2 className="text-2xl font-semibold mb-6 text-center">
+    <div className="max-w-xl mx-auto mt-10 p-8 border border-gray-200 rounded-lg shadow-lg bg-white">
+      <h2 className="text-2xl font-inter font-bold uppercase mb-8 text-center text-[#16610E]">
         Visa Fee Calculator for {country.name}
       </h2>
-      <form className="space-y-4" onSubmit={handleSubmit}>
+      <form className="space-y-6" onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="numVisas" className="block mb-1 font-medium">
+          <label htmlFor="numVisas" className="block mb-2 font-manrope font-medium text-gray-700">
             Number of Visas
           </label>
           <Input
@@ -68,18 +68,19 @@ export default function VisaFeeCalculator({ country }: VisaFeeCalculatorProps) {
             min={1}
             value={numVisas}
             onChange={(e) => setNumVisas(Number(e.target.value))}
+            className="border-gray-200 focus:border-[#16610E] focus:ring-[#16610E]"
           />
         </div>
 
         <div>
-          <label className="block mb-1 font-medium">Type of Visa</label>
+          <label className="block mb-2 font-manrope font-medium text-gray-700">Type of Visa</label>
           <Select value={visaType} onValueChange={setVisaType}>
-            <SelectTrigger className="w-full">
+            <SelectTrigger className="w-full border-gray-200 focus:border-[#16610E] focus:ring-[#16610E]">
               <SelectValue placeholder="Select visa type" />
             </SelectTrigger>
             <SelectContent>
               {visaTypes.map((type) => (
-                <SelectItem key={type.value} value={type.value}>
+                <SelectItem key={type.value} value={type.value} className="font-manrope">
                   {type.label}
                 </SelectItem>
               ))}
@@ -88,14 +89,14 @@ export default function VisaFeeCalculator({ country }: VisaFeeCalculatorProps) {
         </div>
 
         <div>
-          <label className="block mb-1 font-medium">Processing Time</label>
+          <label className="block mb-2 font-manrope font-medium text-gray-700">Processing Time</label>
           <Select value={processingTime} onValueChange={setProcessingTime}>
-            <SelectTrigger className="w-full">
+            <SelectTrigger className="w-full border-gray-200 focus:border-[#16610E] focus:ring-[#16610E]">
               <SelectValue placeholder="Select processing time" />
             </SelectTrigger>
             <SelectContent>
               {processingTimes.map((time) => (
-                <SelectItem key={time.value} value={time.value}>
+                <SelectItem key={time.value} value={time.value} className="font-manrope">
                   {time.label}
                 </SelectItem>
               ))}
@@ -104,14 +105,14 @@ export default function VisaFeeCalculator({ country }: VisaFeeCalculatorProps) {
         </div>
 
         <div>
-          <label className="block mb-1 font-medium">Nationality</label>
+          <label className="block mb-2 font-manrope font-medium text-gray-700">Nationality</label>
           <Select value={nationality} onValueChange={setNationality}>
-            <SelectTrigger className="w-full">
+            <SelectTrigger className="w-full border-gray-200 focus:border-[#16610E] focus:ring-[#16610E]">
               <SelectValue placeholder="Select nationality" />
             </SelectTrigger>
             <SelectContent>
               {COUNTRIES_DATA.map((c) => (
-                <SelectItem key={c.code} value={c.code}>
+                <SelectItem key={c.code} value={c.code} className="font-manrope">
                   {c.name}
                 </SelectItem>
               ))}
@@ -119,19 +120,37 @@ export default function VisaFeeCalculator({ country }: VisaFeeCalculatorProps) {
           </Select>
         </div>
 
-        <div className="pt-4 border-t">
-          <p className="text-lg font-semibold">
-            Estimated Total Fee:{" "}
-            <span className="flex flex-col text-green-600 text-sm">
-              <span>Government Fee - ${govFee}</span>
-              <span>Visa Fee - ${visaFee}</span>
-              <span>Number of Passengers - {numVisas}</span>
-              <span>Service Fee - ${serviceFee}</span>
-              <span>Total Fee - ${totalFee}</span>
-            </span>
+        <div className="pt-6 border-t border-gray-200">
+          <p className="text-lg font-inter font-semibold text-[#16610E] mb-4">
+            Estimated Total Fee
           </p>
-          <Button type="submit" className="mt-4 w-full">
-            Apply Now
+          <div className="flex flex-col space-y-2 text-sm font-manrope">
+            <div className="flex justify-between">
+              <span className="text-gray-600">Government Fee</span>
+              <span className="font-medium">${govFee}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-gray-600">Visa Fee</span>
+              <span className="font-medium">${visaFee}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-gray-600">Number of Passengers</span>
+              <span className="font-medium">{numVisas}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-gray-600">Service Fee</span>
+              <span className="font-medium">${serviceFee}</span>
+            </div>
+            <div className="flex justify-between pt-2 border-t border-gray-200">
+              <span className="font-semibold text-[#16610E]">Total Fee</span>
+              <span className="font-bold text-[#16610E]">${totalFee}</span>
+            </div>
+          </div>
+          <Button 
+            type="submit" 
+            className="mt-6 w-full relative flex h-[50px] items-center justify-center overflow-hidden bg-[#16610E] cursor-pointer rounded-lg text-white shadow-lg transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-[#CB6601] before:duration-600 before:ease-out hover:before:h-56 hover:before:w-56"
+          >
+            <span className="relative z-10 font-manrope font-medium">Apply Now</span>
           </Button>
         </div>
       </form>

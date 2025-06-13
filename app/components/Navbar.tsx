@@ -56,9 +56,9 @@ export default function Navbar() {
                 <NavigationMenuLink href={item.href} className="relative overflow-hidden px-4 py-4 text-md cursor-pointer transition-all duration-300 bg-white
                before:absolute before:inset-0 before:bg-[#16610E]
                before:w-0 before:h-full before:transition-all before:duration-300 before:z-0 before:pointer-events-none 
-               hover:before:w-full hover:text-white rounded-sm border-1 border-gray-300
+               hover:before:w-full hover:text-white
                ">
-                  <div className="relative z-10 hover:border-[#16610E] transition-all whitespace-nowrap text-lg xl:text-xl duration-300">
+                  <div className="relative z-10 font-manrope hover:border-[#16610E] transition-all whitespace-nowrap text-lg xl:text-xl duration-300">
                     {item.label}
                   </div>
                 </NavigationMenuLink>
