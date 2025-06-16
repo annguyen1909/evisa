@@ -24,7 +24,7 @@ export default function CustomAccordion({ items, className }: CustomAccordionPro
 
 
   return (
-    <div className={cn("grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6", className)}>
+    <div className={cn("grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3", className)}>
       {items.map((item, index) => (
         <div key={item.id} className="contents">
           {/* Trigger */}
@@ -42,16 +42,17 @@ export default function CustomAccordion({ items, className }: CustomAccordionPro
           {/* Content */}
           {openId === item.id && (
             <div
-              className="col-span-full mt-4 mb-4 bg-white rounded-lg shadow-lg border border-gray-200 p-6"
+              className="col-span-full mt-4 mb-4 bg-white rounded-lg text-left shadow-lgp-6"
               style={{
                 gridColumn: "1 / -1",
-                gridRow: `${isMobile1
+                gridRow: `${(
+                  isMobile1
                     ? getSelectedRow1(index)
                     : isMobile2
                       ? getSelectedRow2(index)
                       : getSelectedRow4(index)
-                  } + 1`
-
+                ) + 1}`
+                
               }}
             >
               {item.content}

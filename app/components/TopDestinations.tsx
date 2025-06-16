@@ -14,25 +14,29 @@ import Link from "next/link";
 const destinations = [
   {
     name: "Thailand Evisa",
+    link: "thailand",
     image: "/images/topdestinations/thailand.jpg",
   },
   {
     name: "Vietnam Evisa",
+    link: "vietnam",
     image: "/images/topdestinations/vietnam.jpg",
   },
   {
     name: "Japan Evisa",
+    link: "japan",
     image: "/images/topdestinations/japan.jpg",
   },
   {
     name: "Malaysia Evisa",
+    link: "malaysia",
     image: "/images/topdestinations/malaysia.jpg",
   },
 ];
 
 export default function TopDestinationsCarousel() {
   return (
-    <section className="w-full max-w-6xl mx-auto pt-12 pb-4 px-4">
+    <section className="w-full max-w-6xl overflow-x-hidden mx-auto pt-12 pb-4 px-4">
       <h2 className={`text-2xl sm:text-3xl text-[#16610E] font-bold mb-10 text-center`}>Top Destinations</h2>
 
       <Carousel
@@ -40,22 +44,27 @@ export default function TopDestinationsCarousel() {
         className="w-full"
       >
         <CarouselContent className="">
-          {destinations.map(({ name, image }) => (
+          {destinations.map(({ name, link, image }) => (
             <CarouselItem
               key={name}
-              className="md:basis-1/3 lg:basis-1/4 rounded-2xl"
+              className="md:basis-1/3 lg:basis-1/4 hover:scale-105 transition-all duration-300"
             >
-              <Card className="cursor-pointer overflow-hidden rounded-2xl pt-0 pb-4 hover:shadow-lg transition-shadow duration-300">
-                <Image
-                  src={image}
-                  alt={`${name} flag`}
-                  width={500}
-                  height={300}
-                  className="w-full object-cover max-md:h-72"
-                />
-                <CardHeader className="text-center">
-                  <CardTitle className="text-md uppercase">{name}</CardTitle>
-                </CardHeader>
+              <Card className="cursor-pointer overflow-hidden pt-0 pb-4 rounded-sm hover:shadow-lg transition-shadow duration-300">
+                <Link
+                  href={`/destination/${link}`}
+                  className=""
+                >
+                  <Image
+                    src={image}
+                    alt={`${name} flag`}
+                    width={500}
+                    height={300}
+                    className="w-full object-cover h-36 max-md:h-72"
+                  />
+                  <CardHeader className="text-center">
+                    <CardTitle className="text-md uppercase mt-4">{name}</CardTitle>
+                  </CardHeader>
+                </Link>
               </Card>
             </CarouselItem>
           ))}
@@ -69,7 +78,6 @@ export default function TopDestinationsCarousel() {
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
-
       </Carousel>
     </section>
   );

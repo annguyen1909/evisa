@@ -54,7 +54,7 @@ const defaultSections = [
         ],
     },
     {
-        title: "USEFUL INFORMATION",
+        title: "INFORMATION",
         links: [
             { name: "Make Payment", href: "#" },
             { name: "Embassy List", href: "#" },
@@ -63,7 +63,7 @@ const defaultSections = [
         ],
     },
     {
-        title: "MOST REQUESTED EVISA",
+        title: "MOST REQUESTED",
         links: [
             { name: "Kenya Visa", href: "mailto:support@example.com" },
             { name: "Uganda Visa", href: "tel:+11234567890" },
@@ -102,7 +102,7 @@ const Footer = ({
     legalLinks = defaultLegalLinks,
 }: FooterProps) => {
     return (
-        <section className="bg-white text-gray-700 px-6 py-8 md:px-10 lg:px-32">
+        <section className="bg-white text-gray-700 whitespace-nowrap px-6 py-8 md:px-10 lg:px-32">
             <div className="max-w-6xl mx-auto flex flex-col gap-6">
                 {/* Top Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">

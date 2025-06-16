@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import Image from "next/image"
 
-export function LoginForm({
+export function SignupForm({
     className,
     ...props
 }: React.ComponentProps<"div">) {
@@ -26,7 +26,7 @@ export function LoginForm({
                             <div className="flex flex-col items-center text-center">
                                 <h1 className="text-2xl font-bold">Welcome</h1>
                                 <p className="text-muted-foreground text-balance">
-                                    Login to your account
+                                    Create a new account
                                 </p>
                             </div>
                             <div className="grid gap-3">
@@ -76,9 +76,9 @@ export function LoginForm({
                                 </Button>
                             </div>
                             <div className="text-center text-sm">
-                                Don&apos;t have an account?{" "}
+                                Already have an account?{" "}
                                 <a href="/signup" className="underline underline-offset-4">
-                                    Sign up
+                                    Log in
                                 </a>
                             </div>
                         </div>
