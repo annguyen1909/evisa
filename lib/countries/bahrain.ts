@@ -2,10 +2,10 @@
 
 import { Country } from "./type"; // optional type if you're using centralized types
 
-const vietnam: Country = {
-  slug: 'vietnam',
-  name: 'Vietnam',
-  region: 'South East',
+const bahrain: Country = {
+  slug: 'bahrain',
+  name: 'Bahrain',
+  region: 'Middle East',
   flagUrl: '/images/flags/vietnam.png',
   imageUrl: '/images/country/vietnam-bg.jpg',
   roundedFlagUrl: '/images/flags/vietnam.png',
@@ -101,27 +101,27 @@ const vietnam: Country = {
 
   visaTabs: [
     {
-        value: "tourist",
-        color: "#065BB9",
-        title: "Tourism",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Tourist ETA",
+      value: "tourist",
+      color: "#065BB9",
+      title: "Tourism",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Tourist ETA",
     },
     {
-        value: "business",
-        color: "#CB6601",
-        title: "Business",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Business ETA",
+      value: "business",
+      color: "#CB6601",
+      title: "Business",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Business ETA",
     },
     {
-        value: "medical",
-        color: "#16610E",
-        title: "Medical",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Medical ETA",
+      value: "medical",
+      color: "#16610E",
+      title: "Medical",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Medical ETA",
     },
   ],
 };
 
-export default vietnam;
+export default bahrain;

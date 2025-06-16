@@ -2,10 +2,9 @@
 
 import { Country } from "./type"; // optional type if you're using centralized types
 
-const vietnam: Country = {
-  slug: 'vietnam',
-  name: 'Vietnam',
-  region: 'South East',
+const uzbekistan: Country = {
+  slug: 'uzbekistan',
+  name: 'Uzbekistan',
   flagUrl: '/images/flags/vietnam.png',
   imageUrl: '/images/country/vietnam-bg.jpg',
   roundedFlagUrl: '/images/flags/vietnam.png',
@@ -23,30 +22,18 @@ const vietnam: Country = {
       ],
       urgentProcessing: 'As soon as 1 Day',
     },
-    visaTypes: [
+    types: [
       {
         type: 'Tourist ETA',
         description: 'Single Entry for 90 days',
-        visaDuration: '30 days',
-        visaValidity: '60 days',
-        expectedProcessingTime: '2 days',
-        govFee: 12
       },
       {
         type: 'Business ETA',
         description: 'Single Entry for 90 days',
-        visaDuration: '30 days',
-        visaValidity: '60 days',
-        expectedProcessingTime: '2 days',
-        govFee: 12
       },
       {
         type: 'Transit ETA',
         description: 'Single Entry for 72 hours',
-        visaDuration: '30 days',
-        visaValidity: '60 days',
-        expectedProcessingTime: '2 days',
-        govFee: 12
       },
     ],
     requiredFor: '194 nationalities are required to obtain a Tourist ETA.',
@@ -124,4 +111,4 @@ const vietnam: Country = {
   ],
 };
 
-export default vietnam;
+export default uzbekistan;

@@ -5,6 +5,7 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const kenya: Country = {
   slug: 'kenya',
   name: 'Kenya ETA',
+  region: 'Africa',
   flagUrl: '/images/flags/kenya-square.png',
   roundedFlagUrl: '/images/flags/kenya.png',
   imageUrl: '/images/country/kenya-bg.jpg',

@@ -2,10 +2,10 @@
 
 import { Country } from "./type"; // optional type if you're using centralized types
 
-const vietnam: Country = {
-  slug: 'vietnam',
-  name: 'Vietnam',
-  region: 'South East',
+const canada: Country = {
+  slug: 'canada',
+  name: 'Canada',
+  region: 'North America',
   flagUrl: '/images/flags/vietnam.png',
   imageUrl: '/images/country/vietnam-bg.jpg',
   roundedFlagUrl: '/images/flags/vietnam.png',
@@ -124,4 +124,4 @@ const vietnam: Country = {
   ],
 };
 
-export default vietnam;
+export default canada;

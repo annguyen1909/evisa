@@ -7,6 +7,7 @@ export type Country = {
   roundedFlagUrl?: string;
   imageUrl?: string; // Optional image URL for the country
   welcomeImgUrl?: string;
+  region?: string;
   etaInfo: {
     intro: string;
     processing: {
@@ -14,9 +15,13 @@ export type Country = {
       steps: string[];
       urgentProcessing: string;
     };
-    types: {
+    visaTypes: {
       type: string;
       description: string;
+      visaValidity: string;
+      visaDuration: string;
+      expectedProcessingTime: string;
+      govFee: number;
     }[];
     requiredFor: string;
     governmentFee: number;
