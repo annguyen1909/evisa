@@ -23,18 +23,30 @@ const kenya: Country = {
       ],
       urgentProcessing: 'As soon as 1 Day',
     },
-    types: [
+    visaTypes: [
       {
         type: 'Tourist ETA',
         description: 'Single Entry for 90 days',
+        visaDuration: '30 days',
+        visaValidity: '60 days',
+        expectedProcessingTime: '2 days',
+        govFee: 12
       },
       {
         type: 'Business ETA',
         description: 'Single Entry for 90 days',
+        visaDuration: '30 days',
+        visaValidity: '60 days',
+        expectedProcessingTime: '2 days',
+        govFee: 12
       },
       {
         type: 'Transit ETA',
         description: 'Single Entry for 72 hours',
+        visaDuration: '30 days',
+        visaValidity: '60 days',
+        expectedProcessingTime: '2 days',
+        govFee: 12
       },
     ],
     requiredFor: '194 nationalities are required to obtain a Tourist ETA.',
@@ -89,32 +101,32 @@ const kenya: Country = {
 
   visaTabs: [
     {
-        value: "tourist",
-        color: "#065BB9",
-        title: "Tourism",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Tourist ETA",
+      value: "tourist",
+      color: "#065BB9",
+      title: "Tourism",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Tourist ETA",
     },
     {
-        value: "business",
-        color: "#CB6601",
-        title: "Business",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Business ETA",
+      value: "business",
+      color: "#CB6601",
+      title: "Business",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Business ETA",
     },
     {
-        value: "transit",
-        color: "#cfac5a",
-        title: "Transit",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Transit ETA",
+      value: "transit",
+      color: "#cfac5a",
+      title: "Transit",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Transit ETA",
     },
     {
-        value: "medical",
-        color: "#16610E",
-        title: "Medical",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Medical ETA",
+      value: "medical",
+      color: "#16610E",
+      title: "Medical",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Medical ETA",
     },
   ],
 };

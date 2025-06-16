@@ -23,7 +23,7 @@ import { COUNTRIES } from "@/lib/countries";
 
 
 const ITEMS_PER_PAGE = 8;
-const regions = Array.from(new Set(COUNTRIES.map((c) => c.region))).sort();
+const regions = Array.from(new Set(COUNTRIES.map((c) => c.region).filter(Boolean))).sort();
 
 export default function DestinationPage() {
   const router = useRouter();
@@ -173,8 +173,9 @@ export default function DestinationPage() {
                 onValueChange={setRegion}
                 className="px-4 py-2 font-manrope"
               />
-              <CommandList>
+              <CommandList className="p-2">
                 <CommandItem
+                  key="all"
                   value=""
                   onSelect={() => {
                     setRegion("");
@@ -201,8 +202,8 @@ export default function DestinationPage() {
                       className={cn(
                         "px-4 py-2 rounded-lg cursor-pointer transition-colors",
                         region === r
-                          ? "bg-[#16610E]/10 text-[#16610E] font-semibold"
-                          : "hover:bg-[#16610E]/5"
+                          ? "data-[selected=true]:bg-[#16610E]/10 data-[selected=true]:text-[#16610E] font-semibold"
+                          : "data-[selected=true]:hover:bg-[#16610E]/5"
                       )}
                     >
                       {r}
