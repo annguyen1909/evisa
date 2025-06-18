@@ -48,7 +48,7 @@ const visaSteps: Steps[] = [
 
 export default async function CountryPage({ params }: Props) {
     const { country: countrySlug } = params;
-    const country = getCountryBySlug(countrySlug);
+    const country = await getCountryBySlug(countrySlug);
 
     if (!country) {
         notFound();
