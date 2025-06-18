@@ -20,7 +20,7 @@ import {
 import { X, Search, Globe2 } from "lucide-react"; // Example icons
 import { cn } from "@/lib/utils";
 import { COUNTRIES } from "@/lib/countries";
-import VisaSteps from "../components/VisaSteps";
+import VisaSteps from "@/app/components/VisaSteps";
 
 const ITEMS_PER_PAGE = 8;
 const regions = Array.from(new Set(COUNTRIES.map((c) => c.region).filter(Boolean))).sort();
