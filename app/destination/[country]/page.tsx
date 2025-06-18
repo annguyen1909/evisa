@@ -8,10 +8,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { notFound } from 'next/navigation';
 import { Cloud, Earth, CircleDollarSign, SquareCheckBig, Timer, Dock, Send } from 'lucide-react';
 
-type Props = {
-    params: { country: string };
-};
-
 type Steps = {
     name: string;
     title: string;
