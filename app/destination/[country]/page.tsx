@@ -7,7 +7,6 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { notFound } from 'next/navigation';
 import { Cloud, Earth, CircleDollarSign, SquareCheckBig, Timer, Dock, Send } from 'lucide-react';
-import { url } from 'inspector';
 
 type Props = {
     params: { country: string };

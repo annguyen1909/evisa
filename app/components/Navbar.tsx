@@ -9,7 +9,6 @@ import {
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
-  NavigationMenuTrigger,
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 

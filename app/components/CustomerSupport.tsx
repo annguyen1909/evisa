@@ -1,11 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import {
-  PhoneIcon,
-  ChatBubbleLeftEllipsisIcon,
-  EnvelopeIcon,
-} from "@heroicons/react/24/outline";
 import Image from "next/image";
 
 export default function CustomerSupport() {

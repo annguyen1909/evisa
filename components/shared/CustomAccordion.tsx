@@ -15,7 +15,6 @@ export default function CustomAccordion({ items, className }: CustomAccordionPro
   const [openId, setOpenId] = useState<string | null>(null);
   const isMobile1 = useMediaQuery("(max-width: 639px)");
   const isMobile2 = useMediaQuery("(min-width: 640px) and (max-width: 763px)");
-  const isDesktop = useMediaQuery("(min-width: 764px)");
 
   // Calculate which row the selected item is in
   const getSelectedRow1 = (index: number) => Math.floor(index) + 1;

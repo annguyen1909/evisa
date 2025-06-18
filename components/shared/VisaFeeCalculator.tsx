@@ -22,23 +22,16 @@ const visaTypes = [
   { label: "Business Visa", value: "business", time: "5-7 days" },
 ];
 
-const processingTimes = [
-  { label: "Normal (7-10 days)", value: "normal" },
-  { label: "Express (3-5 days)", value: "express" },
-];
-
 export default function VisaFeeCalculator({ country }: VisaFeeCalculatorProps) {
   const [numVisas, setNumVisas] = useState(1);
   const [visaType, setVisaType] = useState("tourist");
-  const [processingTime, setProcessingTime] = useState("normal");
   const [nationality, setNationality] = useState("");
 
   const govFee = country.govFee;
   const serviceFee = country.serviceFee;
   const visaFee = visaType === "tourist" ? country.touristVisa : country.businessVisa;
-  const processingMultiplier = processingTime === "express" ? 1.5 : 1;
 
-  const totalFee = ((govFee + visaFee) * numVisas + serviceFee) * processingMultiplier;
+  const totalFee = ((govFee + visaFee) * numVisas + serviceFee)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
