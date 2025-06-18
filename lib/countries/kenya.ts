@@ -6,6 +6,7 @@ const kenya: Country = {
   slug: 'kenya',
   name: 'Kenya ETA',
   region: 'Africa',
+  code: 'ke',
   flagUrl: '/images/flags/kenya-square.png',
   roundedFlagUrl: '/images/flags/kenya.png',
   imageUrl: '/images/country/kenya/kenya-bg.jpg',

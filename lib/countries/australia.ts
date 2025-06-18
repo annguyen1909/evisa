@@ -6,6 +6,7 @@ const australia: Country = {
   slug: 'australia',
   name: 'Australia',
   region: 'Oceania',
+  code: 'au',
   flagUrl: '/images/country/australia/australia-square.png',
   imageUrl: '/images/country/australia/australia-bg.jpg',
   roundedFlagUrl: '/images/country/australia/australia-rounded.png',

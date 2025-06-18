@@ -1,13 +1,13 @@
-'use client'
-import DestinationClient from '@/components/shared/DestinationClient';
-import { Suspense } from 'react';
+"use client";
+import DestinationClient from "@/components/shared/DestinationClient";
+import { Suspense } from "react";
 
 export default function DestinationPage() {
-  return(
+  return (
     <div>
       <Suspense>
-      <DestinationClient />;
+        <DestinationClient />;
       </Suspense>
     </div>
-  )
+  );
 }

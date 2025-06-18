@@ -1,6 +1,7 @@
 export type Country = {
   slug: string;
   name: string;
+  code: string;
   description: string;
   welcomeMessage: string;
   flagUrl?: string;

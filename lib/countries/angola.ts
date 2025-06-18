@@ -6,6 +6,7 @@ const angola: Country = {
   slug: 'angola',
   name: 'Angola',
   region: 'Africa',
+  code: 'ao',
   flagUrl: '/images/country/angola/angola-square.png',
   imageUrl: '/images/country/angola/angola-bg.jpg',
   roundedFlagUrl: '/images/country/angola/angola-rounded.png',

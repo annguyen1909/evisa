@@ -63,7 +63,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
 
                 <div className="flex flex-col max-w-5xl md:max-w-7xl w-2/3 max-md:items-center gap-2">
                     <Image
-                        src={`${country.flagUrl}`}
+                        src={`https://flagcdn.com/${country.code}.svg`}
                         alt={`${country.name} Flag`}
                         width={50}
                         height={50}

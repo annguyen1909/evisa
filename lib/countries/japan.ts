@@ -2,17 +2,17 @@
 
 import { Country } from "./type"; // optional type if you're using centralized types
 
-const armenia: Country = {
-  slug: 'armenia',
-  name: 'Armenia',
-  region: 'Caucasus',
-  code: 'am',
-  flagUrl: '/images/country/armenia/armenia-square.png',
-  imageUrl: '/images/country/armenia/armenia-bg.jpg',
-  roundedFlagUrl: '/images/country/armenia/armenia-rounded.png',
-  description: `Armenia is a land of ancient monasteries, rugged mountains, and rich traditions. It is one of the world's oldest countries, with a unique alphabet and deep Christian heritage.`,
-  welcomeMessage: `Welcome to Armenia! Visit the ancient churches of Echmiadzin, hike the scenic trails of Dilijan, and explore the vibrant capital Yerevan. Experience Armenian hospitality and culture.`,
-  welcomeImgUrl: '/images/country/armenia/armenia-welcome.jpg',
+const japan: Country = {
+  slug: 'japan',
+  name: 'Japan',
+  region: 'East Asia',
+  code: 'jp',
+  flagUrl:'/images/flags/kenya-square.png',
+  roundedFlagUrl: '/images/flags/kenya.png',
+  imageUrl: '/images/country/kenya-bg.jpg',
+  description: `In January 2024, The Kenya Government replaced the eVisa with the Electronic Travel Authorization (Kenya ETA), for which citizens of all countries are eligible to apply. With this new policy, tourists are no longer required to apply for a visa, instead, they can complete the eTA application process within a few minutes and get permits in a maximum of 03 business days.`,
+  welcomeMessage: `A captivating East African nation teeming with diverse wildlife and awe-inspiring landscapes. Embark on thrilling safaris in renowned national parks, such as the Maasai Mara, and witness the breathtaking beauty of the Great Rift Valley. Immerse yourself in the vibrant culture and warm hospitality of Kenya's diverse communities, making unforgettable memories in this extraordinary destination.`,
+  welcomeImgUrl: '/images/country/kenya-welcome.jpg',
   etaInfo: {
     intro: `In January 2024, The Kenya Government replaced the eVisa with the Electronic Travel Authorization (Kenya ETA), for which citizens of all countries are eligible to apply.`,
     processing: {
@@ -26,28 +26,32 @@ const armenia: Country = {
     },
     visaTypes: [
       {
-        type: 'Tourist ETA',
+        name: 'Tourist ETA',
+        type: 'Single',
         description: 'Single Entry for 90 days',
-        visaDuration: '30 days',
-        visaValidity: '60 days',
-        expectedProcessingTime: '2 days',
+        visaValidity: '30 days',
+        visaDuration: '60 days',
+        expectedProcessingTime: '1 days',
         govFee: 12
+
       },
       {
-        type: 'Business ETA',
+        name: 'Business ETA',
+        type: 'Multiple',
         description: 'Single Entry for 90 days',
-        visaDuration: '30 days',
-        visaValidity: '60 days',
+        visaValidity: '30 days',
+        visaDuration: '60 days',
         expectedProcessingTime: '2 days',
-        govFee: 12
+        govFee: 14
       },
       {
-        type: 'Transit ETA',
+        name: 'Transit ETA',
+        type: '???',
         description: 'Single Entry for 72 hours',
-        visaDuration: '30 days',
-        visaValidity: '60 days',
-        expectedProcessingTime: '2 days',
-        govFee: 12
+        visaValidity: '30 days',
+        visaDuration: '60 days',
+        expectedProcessingTime: '3 days',
+        govFee: 17
       },
     ],
     requiredFor: '194 nationalities are required to obtain a Tourist ETA.',
@@ -95,34 +99,45 @@ const armenia: Country = {
   },
 
   info: {
-    climate: 'Continental, with hot summers and cold winters',
-    language: 'Armenian',
-    currency: 'Armenian Dram (AMD)',
+    climate: 'Tropical, arid',
+    language: 'English and Kiswahili',
+    currency: 'Kenyan shilling (KES)',
   },
 
   visaTabs: [
     {
-      value: "tourist",
-      color: "#065BB9",
-      title: "Tourism",
-      subtitle: "Single Entry for 90 days",
-      visaType: "Tourist ETA",
+        value: "tourist",
+        color: "#065BB9",
+        title: "Tourism",
+        subtitle: "Single Entry for 90 days",
+        visaType: "Tourist ETA",
     },
     {
-      value: "business",
-      color: "#CB6601",
-      title: "Business",
-      subtitle: "Single Entry for 90 days",
-      visaType: "Business ETA",
+        value: "business",
+        color: "#CB6601",
+        title: "Business",
+        subtitle: "Single Entry for 90 days",
+        visaType: "Business ETA",
     },
     {
-      value: "medical",
-      color: "#16610E",
-      title: "Medical",
-      subtitle: "Single Entry for 90 days",
-      visaType: "Medical ETA",
+        value: "transit",
+        color: "#cfac5a",
+        title: "Transit",
+        subtitle: "Single Entry for 90 days",
+        visaType: "Transit ETA",
+    },
+    {
+        value: "medical",
+        color: "#16610E",
+        title: "Medical",
+        subtitle: "Single Entry for 90 days",
+        visaType: "Medical ETA",
     },
   ],
+  allowedNationality: [
+    'Vietnam',
+    'USA',
+  ]
 };
 
-export default armenia;
+export default japan;
