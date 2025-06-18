@@ -37,7 +37,7 @@ const visaTypes: VisaType[] = [
   {
     name: "TRANSIT VISA",
     description:
-      "Medical visa is used for travelers who want to be treated under the system of medicine of a country. It is used by just some governments.",
+      "Medical visa is used for travelers who want to be treated under the system of medicine of a country. It is used by just governments.",
     color: "#CB6601",
     favorites: [
       { name: "Singapore", img: "/images/flags/singapore.png" },
@@ -61,7 +61,7 @@ const visaTypes: VisaType[] = [
 export default function AllVisaTypes() {
   return (
     <section className="w-full max-w-7xl mx-auto py-6 px-4">
-      <h2 className="text-2xl sm:text-3xl font-bold mb-12 text-center text-[#16610E]">
+      <h2 className="text-2xl sm:text-3xl font-manrope font-bold mb-12 text-center text-[#16610E]">
         All eVisa Types. One Place.
       </h2>
 
@@ -69,11 +69,11 @@ export default function AllVisaTypes() {
         {visaTypes.map(({ name, description, color, favorites }) => (
           <Card
             key={name}
-            className="flex flex-col h-full justify-between transition-transform hover:scale-[1.02] hover:shadow-lg"
-            style={{ color }}
+            className="flex flex-col h-full justify-between transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+            style={{ }}
           >
-            <CardHeader>
-              <CardTitle className="font-extrabold text-lg sm:text-xl text-center">
+            <CardHeader className="rounded-t-xl p-2" style={{backgroundColor: color}}>
+              <CardTitle className="font-extrabold text-white text-lg pt-2 sm:text-xl text-center">
                 {name}
               </CardTitle>
             </CardHeader>
@@ -85,17 +85,17 @@ export default function AllVisaTypes() {
             </CardContent>
 
             <hr
-              className="h-px p-[1.5px] mx-6 rounded-xl bg-gray-200 border-0"
+              className="h-px p-[0.5px] mx-2 rounded-xl bg-gray-200 border-0"
               style={{ background: color }}
             />
 
             {favorites && (
               <CardContent className="text-center">
-                <p className="font-bold mb-3" style={{ color }}>
+                <p className="font-bold mb-2" style={{ color }}>
                   Favorite Destinations
                 </p>
 
-                <div className="flex justify-center gap-2 py-2 flex-wrap">
+                <div className="flex justify-center gap-2 pt-2 flex-wrap">
                   {favorites.map(({ name, img }) => (
                     <div
                       key={name}

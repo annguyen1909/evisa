@@ -2,16 +2,16 @@
 
 import { Country } from "./type"; // optional type if you're using centralized types
 
-const canada: Country = {
-  slug: 'canada',
-  name: 'Canada',
-  region: 'North America',
-  flagUrl: '/images/country/canada/canada-square.png',
-  imageUrl: '/images/country/canada/canada-bg.jpg',
-  roundedFlagUrl: '/images/country/canada/canada-rounded.png',
-  description: `Canada is the world's second-largest country, famous for its natural beauty, multicultural cities, and friendly people. From the Rockies to Niagara Falls, it offers adventure and culture.`,
-  welcomeMessage: `Welcome to Canada! Explore the vibrant cities of Toronto and Vancouver, marvel at the beauty of Banff National Park, and experience French culture in Montreal and Quebec City. Enjoy outdoor adventures and Canadian hospitality.`,
-  welcomeImgUrl: '/images/country/canada/canada-welcome.jpg',
+const southafrica: Country = {
+  slug: 'south-africa',
+  name: 'South Africa',
+  region: 'Southern Africa',
+  flagUrl: '/images/country/south-africa/south-africa-square.png',
+  imageUrl: '/images/country/south-africa/south-africa-bg.jpg',
+  roundedFlagUrl: '/images/country/south-africa/south-africa-rounded.png',
+  description: `South Africa is a country of incredible diversity, from the iconic Table Mountain to the wildlife-rich Kruger National Park. It is known for its vibrant cities, history, and natural wonders.`,
+  welcomeMessage: `Welcome to South Africa! Explore Cape Town and Johannesburg, go on safari, and visit the historic Robben Island. Experience the Rainbow Nation's culture, cuisine, and breathtaking landscapes.`,
+  welcomeImgUrl: '/images/country/south-africa/south-africa-welcome.jpg',
   etaInfo: {
     intro: `In January 2024, The Kenya Government replaced the eVisa with the Electronic Travel Authorization (Kenya ETA), for which citizens of all countries are eligible to apply.`,
     processing: {
@@ -94,34 +94,34 @@ const canada: Country = {
   },
 
   info: {
-    climate: 'Varied: arctic in the north, temperate in the south',
-    language: 'English, French',
-    currency: 'Canadian Dollar (CAD)',
+    climate: 'Varied: Mediterranean in the southwest, subtropical in the northeast',
+    language: '11 official languages, including English, Afrikaans, Zulu',
+    currency: 'South African Rand (ZAR)',
   },
 
   visaTabs: [
     {
-        value: "tourist",
-        color: "#065BB9",
-        title: "Tourism",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Tourist ETA",
+      value: "tourist",
+      color: "#065BB9",
+      title: "Tourism",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Tourist ETA",
     },
     {
-        value: "business",
-        color: "#CB6601",
-        title: "Business",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Business ETA",
+      value: "business",
+      color: "#CB6601",
+      title: "Business",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Business ETA",
     },
     {
-        value: "medical",
-        color: "#16610E",
-        title: "Medical",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Medical ETA",
+      value: "medical",
+      color: "#16610E",
+      title: "Medical",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Medical ETA",
     },
   ],
 };
 
-export default canada;
+export default southafrica;

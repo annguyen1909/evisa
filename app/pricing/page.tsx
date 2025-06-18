@@ -124,7 +124,7 @@ content: (
       >
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out -z-10"
-          style={{ backgroundImage: `url('/images/country/kenya-bg.jpg')` }}
+          style={{ backgroundImage: `url('/images/country/kenya/kenya-bg.jpg')` }}
         />
         <div className="w-full items-center text-center gap-2">
           <h2 className="text-2xl font-manrope sm:text-3xl md:text-3xl">

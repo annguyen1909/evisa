@@ -2,16 +2,16 @@
 
 import { Country } from "./type"; // optional type if you're using centralized types
 
-const canada: Country = {
-  slug: 'canada',
-  name: 'Canada',
-  region: 'North America',
-  flagUrl: '/images/country/canada/canada-square.png',
-  imageUrl: '/images/country/canada/canada-bg.jpg',
-  roundedFlagUrl: '/images/country/canada/canada-rounded.png',
-  description: `Canada is the world's second-largest country, famous for its natural beauty, multicultural cities, and friendly people. From the Rockies to Niagara Falls, it offers adventure and culture.`,
-  welcomeMessage: `Welcome to Canada! Explore the vibrant cities of Toronto and Vancouver, marvel at the beauty of Banff National Park, and experience French culture in Montreal and Quebec City. Enjoy outdoor adventures and Canadian hospitality.`,
-  welcomeImgUrl: '/images/country/canada/canada-welcome.jpg',
+const hongkong: Country = {
+  slug: 'hong-kong',
+  name: 'Hong Kong',
+  region: 'East Asia',
+  flagUrl: '/images/country/hong-kong/hong-kong-square.png',
+  imageUrl: '/images/country/hong-kong/hong-kong-bg.jpg',
+  roundedFlagUrl: '/images/country/hong-kong/hong-kong-rounded.png',
+  description: `Hong Kong is a vibrant metropolis known for its impressive skyline, bustling harbor, and unique blend of Eastern and Western cultures. It is a global financial hub and a gateway to China.`,
+  welcomeMessage: `Welcome to Hong Kong! Explore the lively streets of Kowloon, take in panoramic views from Victoria Peak, and enjoy world-class shopping and dining. Experience the fusion of tradition and modernity in this dynamic city.`,
+  welcomeImgUrl: '/images/country/hong-kong/hong-kong-welcome.jpg',
   etaInfo: {
     intro: `In January 2024, The Kenya Government replaced the eVisa with the Electronic Travel Authorization (Kenya ETA), for which citizens of all countries are eligible to apply.`,
     processing: {
@@ -94,34 +94,34 @@ const canada: Country = {
   },
 
   info: {
-    climate: 'Varied: arctic in the north, temperate in the south',
-    language: 'English, French',
-    currency: 'Canadian Dollar (CAD)',
+    climate: 'Subtropical, with hot humid summers and mild winters',
+    language: 'Chinese (Cantonese), English',
+    currency: 'Hong Kong Dollar (HKD)',
   },
 
   visaTabs: [
     {
-        value: "tourist",
-        color: "#065BB9",
-        title: "Tourism",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Tourist ETA",
+      value: "tourist",
+      color: "#065BB9",
+      title: "Tourism",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Tourist ETA",
     },
     {
-        value: "business",
-        color: "#CB6601",
-        title: "Business",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Business ETA",
+      value: "business",
+      color: "#CB6601",
+      title: "Business",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Business ETA",
     },
     {
-        value: "medical",
-        color: "#16610E",
-        title: "Medical",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Medical ETA",
+      value: "medical",
+      color: "#16610E",
+      title: "Medical",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Medical ETA",
     },
   ],
 };
 
-export default canada;
+export default hongkong;

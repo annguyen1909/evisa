@@ -37,8 +37,8 @@ const destinations = [
 export default function TopDestinationsCarousel() {
   return (
     <section className="w-full max-w-6xl overflow-x-hidden mx-auto pt-12 pb-4 px-4">
-      <h2 className={`text-2xl sm:text-3xl text-[#16610E] font-bold mb-10 text-center`}>Top Destinations</h2>
-
+      <h2 className="text-2xl sm:text-3xl text-[#16610E] font-manrope font-bold mb-2 text-center">Top Destinations</h2>
+      <h2 className="text-sm sm:text-lg text-gray-600 mb-6 text-center">Explore the most popular countries with fast and easy eVisa access — your next adventure starts here.</h2>
       <Carousel
         opts={{ align: "start" }}
         className="w-full"
@@ -47,7 +47,7 @@ export default function TopDestinationsCarousel() {
           {destinations.map(({ name, link, image }) => (
             <CarouselItem
               key={name}
-              className="md:basis-1/3 lg:basis-1/4 hover:scale-105 transition-all duration-300"
+              className="md:basis-1/3 lg:basis-2/7 hover:scale-105 transition-all duration-300"
             >
               <Card className="cursor-pointer overflow-hidden pt-0 pb-4 rounded-sm hover:shadow-lg transition-shadow duration-300">
                 <Link

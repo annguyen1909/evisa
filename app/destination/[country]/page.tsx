@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { notFound } from 'next/navigation';
 import { Cloud, Earth, CircleDollarSign, SquareCheckBig, Timer, Dock, Send } from 'lucide-react';
+import { url } from 'inspector';
 
 type Props = {
     params: { country: string };
@@ -82,35 +83,40 @@ export default async function CountryPage({ params }: Props) {
             {/* ABOUT SECTION */}
             <section
                 id="country-intro"
-                className="w-full bg-white rounded-lg mt-12 p-4 sm:p-8 max-w-5xl md:max-w-7xl mx-auto text-center flex flex-col items-center gap-8"
-                style={{ backgroundImage: `url(${country.imageUrl})` }}
+                className="w-full bg-white rounded-lg mt-12 p-4 sm:p-6 max-w-5xl md:max-w-7xl mx-auto text-center flex flex-col items-center gap-6"
+                style={{
+                    backgroundImage: "url('/images/country/about/about.jpg')",
+                    backgroundSize: "cover",           // or "contain", depending on your need
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center"
+                }}
             >
-                <div className="flex flex-col items-center">
+                <div className="w-full md:w-5/6 flex flex-col items-center">
                     <Image
                         src={`${country.roundedFlagUrl}`}
                         alt={`${country.name} Flag`}
                         width={50}
                         height={50}
                     />
-                    <h2 className="text-2xl font-inter sm:text-3xl font-bold uppercase mt-6 mb-4">
+                    <h2 className="text-xl sm:text-3xl font-manrope font-bold uppercase mt-6 mb-4">
                         About {country.name}
                     </h2>
-                    <p className="text-md px-0 md:px-8 font-manrope sm:text-xl max-w-5xl md:max-w-7xl">
+                    <p className="text-lg px-4 md:px-12 font-manrope text-gray-700">
                         {country.description}
                     </p>
                 </div>
 
-                <div className="w-full flex flex-col md:flex-row md:justify-between gap-0">
-                    <div className="flex md:w-1/3 flex-row md:flex-col items-center gap-4 text-[#065BB9] font-bold text-xl text-center">
-                        <Dock size={50} />
+                <div className="w-full md:w-2/3 px-16 md:px-0 flex flex-col md:flex-row md:justify-between gap-0">
+                    <div className="flex md:w-1/3 flex-row md:flex-col items-center gap-2 text-[#065BB9] font-normal text-xl text-center">
+                        <Dock size={40} strokeWidth='1.25px' />
                         <p>Apply Online In 3 Steps</p>
                     </div>
-                    <div className="flex md:w-1/3 flex-row md:flex-col items-center gap-4 text-[#CB6601] font-bold text-xl text-center">
-                        <Timer size={50} />
+                    <div className="flex md:w-1/3 flex-row md:flex-col items-center gap-2 text-[#CB6601] font-normal text-xl text-center">
+                        <Timer size={40} strokeWidth='1.25px' />
                         <p>As soon as 1 Day</p>
                     </div>
-                    <div className="flex md:w-1/3 flex-row md:flex-col items-center gap-4 text-[#cfac5a] font-bold text-xl text-center">
-                        <Send size={50} />
+                    <div className="flex md:w-1/3 flex-row md:flex-col items-center gap-2 text-[#cfac5a] font-normal text-xl text-center">
+                        <Send size={40} strokeWidth='1.25px' />
                         <p>Receive eTA by Email</p>
                     </div>
                 </div>

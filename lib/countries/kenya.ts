@@ -8,10 +8,10 @@ const kenya: Country = {
   region: 'Africa',
   flagUrl: '/images/flags/kenya-square.png',
   roundedFlagUrl: '/images/flags/kenya.png',
-  imageUrl: '/images/country/kenya-bg.jpg',
+  imageUrl: '/images/country/kenya/kenya-bg.jpg',
   description: `In January 2024, The Kenya Government replaced the eVisa with the Electronic Travel Authorization (Kenya ETA), for which citizens of all countries are eligible to apply. With this new policy, tourists are no longer required to apply for a visa, instead, they can complete the eTA application process within a few minutes and get permits in a maximum of 03 business days.`,
   welcomeMessage: `A captivating East African nation teeming with diverse wildlife and awe-inspiring landscapes. Embark on thrilling safaris in renowned national parks, such as the Maasai Mara, and witness the breathtaking beauty of the Great Rift Valley. Immerse yourself in the vibrant culture and warm hospitality of Kenya's diverse communities, making unforgettable memories in this extraordinary destination.`,
-  welcomeImgUrl: '/images/country/kenya-welcome.jpg',
+  welcomeImgUrl: '/images/country/kenya/kenya-welcome.jpg',
   etaInfo: {
     intro: `In January 2024, The Kenya Government replaced the eVisa with the Electronic Travel Authorization (Kenya ETA), for which citizens of all countries are eligible to apply.`,
     processing: {

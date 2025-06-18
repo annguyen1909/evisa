@@ -5,13 +5,13 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const vietnam: Country = {
   slug: 'vietnam',
   name: 'Vietnam',
-  region: 'South East',
-  flagUrl: '/images/flags/vietnam.png',
-  imageUrl: '/images/country/vietnam-bg.jpg',
-  roundedFlagUrl: '/images/flags/vietnam.png',
+  region: 'South East Asia',
+  flagUrl: '/images/country/vietnam/vietnam-square.png',
+  imageUrl: '/images/country/vietnam/vietnam-bg.jpg',
+  roundedFlagUrl: '/images/country/vietnam/vietnam-rounded.png',
   description: `A Vietnamese visa is a type of travel document issued by Vietnamese officials that allows you to travel to and enter Vietnam with tourism and business intentions.`,
   welcomeMessage: `Vietnam - A captivating Southeast Asian country renowned for its breathtaking landscapes, rich history, and vibrant culture. Explore the bustling streets of Hanoi, the capital city, where traditional architecture blends with modern influences, and indulge in the flavors of Vietnamese street food. Immerse yourself in the natural beauty of Halong Bay, with its towering limestone islands and emerald waters, or venture into the lush rice terraces of Sapa. Discover the ancient wonders of Hue's Imperial City or the charming lantern-lit streets of Hoi An.`,
-  welcomeImgUrl: '/images/country/kenya-welcome.jpg',
+  welcomeImgUrl: '/images/country/vietnam/vietnam-welcome.jpg',
   etaInfo: {
     intro: `In January 2024, The Kenya Government replaced the eVisa with the Electronic Travel Authorization (Kenya ETA), for which citizens of all countries are eligible to apply.`,
     processing: {

@@ -2,16 +2,16 @@
 
 import { Country } from "./type"; // optional type if you're using centralized types
 
-const canada: Country = {
-  slug: 'canada',
-  name: 'Canada',
-  region: 'North America',
-  flagUrl: '/images/country/canada/canada-square.png',
-  imageUrl: '/images/country/canada/canada-bg.jpg',
-  roundedFlagUrl: '/images/country/canada/canada-rounded.png',
-  description: `Canada is the world's second-largest country, famous for its natural beauty, multicultural cities, and friendly people. From the Rockies to Niagara Falls, it offers adventure and culture.`,
-  welcomeMessage: `Welcome to Canada! Explore the vibrant cities of Toronto and Vancouver, marvel at the beauty of Banff National Park, and experience French culture in Montreal and Quebec City. Enjoy outdoor adventures and Canadian hospitality.`,
-  welcomeImgUrl: '/images/country/canada/canada-welcome.jpg',
+const cambodia: Country = {
+  slug: 'cambodia',
+  name: 'Cambodia',
+  region: 'Middle East',
+  flagUrl: '/images/flags/vietnam.png',
+  imageUrl: '/images/country/vietnam-bg.jpg',
+  roundedFlagUrl: '/images/flags/vietnam.png',
+  description: `A Vietnamese visa is a type of travel document issued by Vietnamese officials that allows you to travel to and enter Vietnam with tourism and business intentions.`,
+  welcomeMessage: `Vietnam - A captivating Southeast Asian country renowned for its breathtaking landscapes, rich history, and vibrant culture. Explore the bustling streets of Hanoi, the capital city, where traditional architecture blends with modern influences, and indulge in the flavors of Vietnamese street food. Immerse yourself in the natural beauty of Halong Bay, with its towering limestone islands and emerald waters, or venture into the lush rice terraces of Sapa. Discover the ancient wonders of Hue's Imperial City or the charming lantern-lit streets of Hoi An.`,
+  welcomeImgUrl: '/images/country/kenya-welcome.jpg',
   etaInfo: {
     intro: `In January 2024, The Kenya Government replaced the eVisa with the Electronic Travel Authorization (Kenya ETA), for which citizens of all countries are eligible to apply.`,
     processing: {
@@ -94,34 +94,34 @@ const canada: Country = {
   },
 
   info: {
-    climate: 'Varied: arctic in the north, temperate in the south',
-    language: 'English, French',
-    currency: 'Canadian Dollar (CAD)',
+    climate: 'Humid, tropical',
+    language: 'Vietnam, English',
+    currency: 'Vietnam Dong (VND)',
   },
 
   visaTabs: [
     {
-        value: "tourist",
-        color: "#065BB9",
-        title: "Tourism",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Tourist ETA",
+      value: "tourist",
+      color: "#065BB9",
+      title: "Tourism",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Tourist ETA",
     },
     {
-        value: "business",
-        color: "#CB6601",
-        title: "Business",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Business ETA",
+      value: "business",
+      color: "#CB6601",
+      title: "Business",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Business ETA",
     },
     {
-        value: "medical",
-        color: "#16610E",
-        title: "Medical",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Medical ETA",
+      value: "medical",
+      color: "#16610E",
+      title: "Medical",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Medical ETA",
     },
   ],
 };
 
-export default canada;
+export default cambodia;

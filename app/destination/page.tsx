@@ -20,6 +20,7 @@ import {
 import { X, Search, Globe2 } from "lucide-react"; // Example icons
 import { cn } from "@/lib/utils";
 import { COUNTRIES } from "@/lib/countries";
+import VisaSteps from "../components/VisaSteps";
 
 
 const ITEMS_PER_PAGE = 8;
@@ -252,6 +253,7 @@ export default function DestinationPage() {
           </button>
         ))}
       </div>
+      <VisaSteps />
     </section>
   );
 }
