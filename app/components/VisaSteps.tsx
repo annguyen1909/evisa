@@ -44,7 +44,7 @@ const visaTypes: VisaType[] = [
 export default function AllVisaTypes() {
   return (
     <section className="w-full max-w-7xl mx-auto py-6 px-4">
-      <h2 className="text-2xl sm:text-3xl font-bold mb-12 text-center font-manrope text-[#16610E]">
+      <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center font-manrope text-[#16610E]">
         4 Easy Steps to Get Your eVisa
       </h2>
 
@@ -56,7 +56,7 @@ export default function AllVisaTypes() {
             style={{ color: "#16610E" }}
           >
             <CardHeader className="">
-              <CardTitle className="flex items-center justify-center w-16 h-16 sm:w-14 sm:h-14 rounded-full bg-[#16610E] text-white text-3xl font-extrabold text-center mx-auto">
+              <CardTitle className="flex items-center justify-center w-16 h-16 sm:w-14 sm:h-14 rounded-full bg-[linear-gradient(45deg,_#16610E_50%,_#FED16A_100%)] text-white text-3xl font-extrabold text-center mx-auto">
                 {name}
               </CardTitle>
             </CardHeader>

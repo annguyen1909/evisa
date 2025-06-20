@@ -139,7 +139,7 @@ export default function CheckEligibility() {
     try {
       // Import the selected destination's data file (e.g., "@/lib/countries/vietnam.ts")
       const destinationModule = await import(`@/lib/countries/${destinationSlug}`);
-      const eligibleCountries: string[] = destinationModule.default.eligibleCountries;
+      const allowedNationalities: string[] = destinationModule.default.etaInfo.visaTypes.map((visaType: any) => visaType.allowedNationalities);
 
       // Find the nationality's name (e.g., 'Vietnam' from 'vn')
       const nationalityName = nationalityOptions.find(
@@ -151,7 +151,7 @@ export default function CheckEligibility() {
         return;
       }
 
-      const isEligible = eligibleCountries.includes(nationality.toUpperCase());
+      const isEligible = allowedNationalities.includes(nationality.toUpperCase());
 
       if (isEligible) {
         router.push(`/check-requirements?n=${nationality}&d=${destination}`);

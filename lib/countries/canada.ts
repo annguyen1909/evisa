@@ -81,19 +81,6 @@ const canada: Country = {
     ],
     note: 'You can also apply on your own through the government website to save your budget.',
   },
-
-  recommendedInsurance: {
-    name: 'Covid-19 Insurance',
-    price: 299,
-    benefits: [
-      'Maximum Benefit up to US$ 50,000.00',
-      'Covering Covid-19 Treatment Expense',
-      'Medical Payments Coverage',
-      'Trip Delay, Trip Interruption, Lost Baggage',
-      'An advantage condition for your visa approval',
-    ],
-  },
-
   info: {
     climate: 'Varied: arctic in the north, temperate in the south',
     language: 'English, French',

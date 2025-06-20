@@ -26,32 +26,26 @@ const australia: Country = {
     },
     visaTypes: [
       {
-        type: 'Tourist ETA',
-        description: 'Single Entry for 90 days',
-        visaDuration: '30 days',
+        name: 'Tourist Evisa (Multiple Entries for 1 year)',
+        type: 'Tourist Evisa',
+        description: 'Multiple Entries for 1 year',
+        visaDuration: '1 year',
         visaValidity: '60 days',
         expectedProcessingTime: '2 days',
-        govFee: 12
+        govFee: 150,
+        allowedNationalities: ["AD", "AT", "BE", "BG", "BN", "CA", "CH", "CY", "CZ", "DE", "DK", "EE", "ES", "FI", "FR", "GB", "GR", "HK", "HR", "HU", "IE", "IS", "IT", "JP", "KR", "LI", "LT", "LU", "LV", "MC", "MT", "NL", "NO", "PL", "PT", "RO", "SE", "SG", "SI", "SK", "SM", "TW", "US", "VA"]
       },
       {
-        type: 'Business ETA',
-        description: 'Single Entry for 90 days',
-        visaDuration: '30 days',
+        name: 'Business Evisa (Multiple Entries for 1 year)',
+        type: 'Business Evisa',
+        description: 'Multiple Entries for 1 year',
+        visaDuration: '1 year',
         visaValidity: '60 days',
         expectedProcessingTime: '2 days',
-        govFee: 12
-      },
-      {
-        type: 'Transit ETA',
-        description: 'Single Entry for 72 hours',
-        visaDuration: '30 days',
-        visaValidity: '60 days',
-        expectedProcessingTime: '2 days',
-        govFee: 12
-      },
+        govFee: 150,
+        allowedNationalities: ["AD", "AT", "BE", "BG", "BN", "CA", "CH", "CY", "CZ", "DE", "DK", "EE", "ES", "FI", "FR", "GB", "GR", "HK", "HR", "HU", "IE", "IS", "IT", "JP", "KR", "LI", "LT", "LU", "LV", "MC", "MT", "NL", "NO", "PL", "PT", "RO", "SE", "SG", "SI", "SK", "SM", "TW", "US", "VA"]
+      }
     ],
-    requiredFor: '194 nationalities are required to obtain a Tourist ETA.',
-    governmentFee: 95,
     serviceFee: 'See more', // or use a number if fixed
   },
 
@@ -63,13 +57,6 @@ const australia: Country = {
     '24/7 online support team for any issues',
     'Urgent case support, with added fees',
   ],
-
-  howToApply: [
-    'Fill in the online form on our website.',
-    'Pay the eTA fee online via credit card, debit card, PayPal, or bank transfer.',
-    'Get your eTA sent to your email.',
-  ],
-
   gvcSupport: {
     description: 'Apply Visa at GVC — with many years of experience, GVC simplifies the process.',
     services: [
@@ -81,94 +68,11 @@ const australia: Country = {
     ],
     note: 'You can also apply on your own through the government website to save your budget.',
   },
-
-  recommendedInsurance: {
-    name: 'Covid-19 Insurance',
-    price: 299,
-    benefits: [
-      'Maximum Benefit up to US$ 50,000.00',
-      'Covering Covid-19 Treatment Expense',
-      'Medical Payments Coverage',
-      'Trip Delay, Trip Interruption, Lost Baggage',
-      'An advantage condition for your visa approval',
-    ],
-  },
-
   info: {
     climate: 'Varied: tropical in the north, temperate in the south',
     language: 'English',
     currency: 'Australian Dollar (AUD)',
-  },
-
-  visaTabs: [
-    {
-      value: "tourist",
-      color: "#065BB9",
-      title: "Tourism",
-      subtitle: "Single Entry for 90 days",
-      visaType: "Tourist ETA",
-    },
-    {
-      value: "business",
-      color: "#CB6601",
-      title: "Business",
-      subtitle: "Single Entry for 90 days",
-      visaType: "Business ETA",
-    },
-    {
-      value: "medical",
-      color: "#16610E",
-      title: "Medical",
-      subtitle: "Single Entry for 90 days",
-      visaType: "Medical ETA",
-    },
-  ],
-  eligibleCountries: [
-    'AD',
-    'AT',
-    'BE',
-    'BN',
-    'BG',
-    'CA',
-    'HR',
-    'CY',
-    'CZ',
-    'DK',
-    'EE',
-    'FI',
-    'FR',
-    'DE',
-    'GR',
-    'HK',
-    'HU',
-    'IS',
-    'IE',
-    'IT',
-    'JP',
-    'KR',
-    'LV',
-    'LI',
-    'LT',
-    'LU',
-    'MT',
-    'MC',
-    'NL',
-    'NO',
-    'PL',
-    'PT',
-    'RO',
-    'SM',
-    'SG',
-    'SK',
-    'SI',
-    'ES',
-    'SE',
-    'CH',
-    'TW',
-    'GB',
-    'US',
-    'VA'
-  ]
+  }
 };
 
 export default australia;

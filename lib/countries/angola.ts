@@ -26,33 +26,27 @@ const angola: Country = {
     },
     visaTypes: [
       {
-        type: 'Tourist ETA',
-        description: 'Single Entry for 90 days',
+        name: 'Tourist Evisa (Single Entry for 30 days)',
+        type: 'Tourist Evisa',
+        description: 'Single Entry for 30 days',
         visaDuration: '30 days',
         visaValidity: '60 days',
         expectedProcessingTime: '2 days',
-        govFee: 12
+        govFee: 30,
+        allowedNationalities: ["AE", "AR", "AT", "AU", "BE", "BG", "BR", "BW", "CA", "CH", "CL", "CN", "CU", "CV", "CY", "CZ", "DE", "DK", "DZ", "EE", "ES", "FI", "FR", "GB", "GR", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JP", "KR", "LS", "LU", "LV", "MA", "MC", "MG", "MO", "MT", "MU", "MW", "NL", "NO", "NZ", "PL", "PT", "RO", "RU", "SC", "SE", "SG", "SI", "SK", "ST", "SZ", "TL", "TW", "US", "UY", "VA", "VE", "ZM", "ZW"]
       },
       {
-        type: 'Business ETA',
-        description: 'Single Entry for 90 days',
+        name: 'Business Evisa (Single Entry for 30 days)',
+        type: 'Business Evisa',
+        description: 'Single Entry for 30 days',
         visaDuration: '30 days',
         visaValidity: '60 days',
         expectedProcessingTime: '2 days',
-        govFee: 12
-      },
-      {
-        type: 'Transit ETA',
-        description: 'Single Entry for 72 hours',
-        visaDuration: '30 days',
-        visaValidity: '60 days',
-        expectedProcessingTime: '2 days',
-        govFee: 12
+        govFee: 30,
+        allowedNationalities: ["AE", "AR", "AT", "AU", "BE", "BG", "BR", "BW", "CA", "CH", "CL", "CN", "CU", "CV", "CY", "CZ", "DE", "DK", "DZ", "EE", "ES", "FI", "FR", "GB", "GR", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JP", "KR", "LS", "LU", "LV", "MA", "MC", "MG", "MO", "MT", "MU", "MW", "NL", "NO", "NZ", "PL", "PT", "RO", "RU", "SC", "SE", "SG", "SI", "SK", "ST", "SZ", "TL", "TW", "US", "UY", "VA", "VE", "ZM", "ZW"]
       },
     ],
-    requiredFor: '194 nationalities are required to obtain a Tourist ETA.',
-    governmentFee: 95,
-    serviceFee: 'See more', // or use a number if fixed
+    serviceFee: 49.99,
   },
 
   visaServicePackage: [
@@ -63,13 +57,6 @@ const angola: Country = {
     '24/7 online support team for any issues',
     'Urgent case support, with added fees',
   ],
-
-  howToApply: [
-    'Fill in the online form on our website.',
-    'Pay the eTA fee online via credit card, debit card, PayPal, or bank transfer.',
-    'Get your eTA sent to your email.',
-  ],
-
   gvcSupport: {
     description: 'Apply Visa at GVC — with many years of experience, GVC simplifies the process.',
     services: [
@@ -81,48 +68,11 @@ const angola: Country = {
     ],
     note: 'You can also apply on your own through the government website to save your budget.',
   },
-
-  recommendedInsurance: {
-    name: 'Covid-19 Insurance',
-    price: 299,
-    benefits: [
-      'Maximum Benefit up to US$ 50,000.00',
-      'Covering Covid-19 Treatment Expense',
-      'Medical Payments Coverage',
-      'Trip Delay, Trip Interruption, Lost Baggage',
-      'An advantage condition for your visa approval',
-    ],
-  },
-
   info: {
     climate: 'Tropical, with distinct wet and dry seasons',
     language: 'Portuguese',
     currency: 'Kwanza (AOA)',
   },
-
-  visaTabs: [
-    {
-      value: "tourist",
-      color: "#065BB9",
-      title: "Tourism",
-      subtitle: "Single Entry for 90 days",
-      visaType: "Tourist ETA",
-    },
-    {
-      value: "business",
-      color: "#CB6601",
-      title: "Business",
-      subtitle: "Single Entry for 90 days",
-      visaType: "Business ETA",
-    },
-    {
-      value: "medical",
-      color: "#16610E",
-      title: "Medical",
-      subtitle: "Single Entry for 90 days",
-      visaType: "Medical ETA",
-    },
-  ],
 };
 
 export default angola;

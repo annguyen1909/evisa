@@ -52,7 +52,7 @@ export default function TopDestinationsCarousel() {
           {destinations.map(({ name, link, image }) => (
             <CarouselItem
               key={name}
-              className="md:basis-1/3 lg:basis-2/9 hover:scale-105 transition-all duration-300"
+              className="md:basis-1/3 lg:basis-2/9 hover:scale-101 transition-all duration-300"
             >
               <Card className="cursor-pointer overflow-hidden pt-0 pb-4 rounded-sm hover:shadow-lg transition-shadow duration-300">
                 <Link

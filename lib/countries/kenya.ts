@@ -50,9 +50,7 @@ const kenya: Country = {
         govFee: 12
       },
     ],
-    requiredFor: '194 nationalities are required to obtain a Tourist ETA.',
-    governmentFee: 95,
-    serviceFee: 'See more', // or use a number if fixed
+    serviceFee: '$49.99'
   },
 
   visaServicePackage: [
@@ -63,13 +61,6 @@ const kenya: Country = {
     '24/7 online support team for any issues',
     'Urgent case support, with added fees',
   ],
-
-  howToApply: [
-    'Fill in the online form on our website.',
-    'Pay the eTA fee online via credit card, debit card, PayPal, or bank transfer.',
-    'Get your eTA sent to your email.',
-  ],
-
   gvcSupport: {
     description: 'Apply Visa at GVC — with many years of experience, GVC simplifies the process.',
     services: [
@@ -81,25 +72,11 @@ const kenya: Country = {
     ],
     note: 'You can also apply on your own through the government website to save your budget.',
   },
-
-  recommendedInsurance: {
-    name: 'Covid-19 Insurance',
-    price: 299,
-    benefits: [
-      'Maximum Benefit up to US$ 50,000.00',
-      'Covering Covid-19 Treatment Expense',
-      'Medical Payments Coverage',
-      'Trip Delay, Trip Interruption, Lost Baggage',
-      'An advantage condition for your visa approval',
-    ],
-  },
-
   info: {
     climate: 'Tropical, arid',
     language: 'English and Kiswahili',
     currency: 'Kenyan shilling (KES)',
   },
-
   visaTabs: [
     {
       value: "tourist",

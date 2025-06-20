@@ -6,10 +6,9 @@ export type Country = {
   welcomeMessage: string;
   flagUrl?: string;
   roundedFlagUrl?: string;
-  imageUrl?: string; // Optional image URL for the country
+  imageUrl?: string;
   welcomeImgUrl?: string;
   region?: string;
-  eligibleCountries: string[];
   etaInfo: {
     intro: string;
     processing: {
@@ -18,35 +17,22 @@ export type Country = {
       urgentProcessing: string;
     };
     visaTypes: {
+      name: string;
       type: string;
       description: string;
       visaValidity: string;
       visaDuration: string;
       expectedProcessingTime: string;
       govFee: number;
+      allowedNationalities: string[];
     }[];
-    requiredFor: string;
-    governmentFee: number;
     serviceFee: string | number;
   };
-  visaTabs: {
-    value: string;
-    color: string;
-    title: string;
-    subtitle: string;
-    visaType: string;
-  }[];
   visaServicePackage: string[];
-  howToApply: string[];
   gvcSupport: {
     description: string;
     services: string[];
     note: string;
-  };
-  recommendedInsurance: {
-    name: string;
-    price: number;
-    benefits: string[];
   };
   info: {
     climate: string;

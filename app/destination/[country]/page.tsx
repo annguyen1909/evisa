@@ -15,6 +15,15 @@ type Steps = {
     image?: string;
 };
 
+const tabColors = [
+    "#EF4444", // red
+    "#3B82F6", // blue
+    "#10B981", // green
+    "#F59E0B", // amber
+    "#8B5CF6", // purple
+    "#EC4899", // pink
+    "#FACC15", // yellow
+];
 
 const visaSteps: Steps[] = [
     {
@@ -80,7 +89,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
                 id="country-intro"
                 className="w-full bg-white rounded-lg mt-12 p-4 sm:p-6 max-w-5xl md:max-w-7xl mx-auto text-center flex flex-col items-center gap-6"
                 style={{
-                    backgroundImage: "url('/images/country/about/about.jpg')",
+                    backgroundImage: "url('/images/assets/background.jpg')",
                     backgroundSize: "cover",           // or "contain", depending on your need
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center"
@@ -175,73 +184,78 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
                 >
                     Visa Types for {country.name}
                 </h2>
-                <Tabs defaultValue="tourist" className="w-full">
+                <Tabs defaultValue={country.etaInfo.visaTypes[0]?.name} className="w-full">
                     <TabsList className="flex mx-auto flex-wrap gap-2">
-                        {country.visaTabs.map((tab) => (
-                            <TabsTrigger
-                                key={tab.value}
-                                value={tab.value}
-                                className="data-[state=active]:text-[var(--tab-color)] data-[state=active]:bg-[var(--tab-color)]/10 cursor-pointer"
-                                style={{
-                                    "--tab-color": tab.color,
-                                } as React.CSSProperties}
-                            >
-                                <div className="flex flex-col items-center">
-                                    <p className="uppercase text-xl font-bold">{tab.title}</p>
-                                    <p className="text-lg">{tab.subtitle}</p>
-                                </div>
-                            </TabsTrigger>
-                        ))}
+                        {country.etaInfo.visaTypes.map((tab, index) => {
+                            const color = tabColors[index % tabColors.length]; // loop if more than 7
+                            return (
+                                <TabsTrigger
+                                    key={tab.name}
+                                    value={tab.name}
+                                    className="data-[state=active]:text-[var(--tab-color)] data-[state=active]:bg-[var(--tab-color)]/10 cursor-pointer"
+                                    style={{
+                                        "--tab-color": color,
+                                    } as React.CSSProperties}
+                                >
+                                    <div className="flex flex-col items-center">
+                                        <p className="uppercase text-xl font-bold">{tab.type}</p>
+                                        <p className="text-lg">{tab.description}</p>
+                                    </div>
+                                </TabsTrigger>
+                            );
+                        })}
                     </TabsList>
-                    {country.visaTabs.map((tab) => (
-                        <TabsContent key={tab.value} value={tab.value} className="mt-6">
+                    {country.etaInfo.visaTypes.map((visa) => (
+                        <TabsContent key={visa.name} value={visa.name} className="mt-6">
                             <div className="flex flex-col lg:flex-row gap-6 items-center">
                                 <div className="max-w-4xl mx-auto flex flex-col gap-2 text-md sm:text-xl space-y-4" style={{ fontFamily: 'Roboto' }}>
-                                    <p className='font-manrope'>The {country.name} government requires {country.eligibleCountries.length} nationalities to get a {tab.visaType} to enter the country for Tourism. Now you can apply on our website easily and receive it by email.</p>
+                                    <p className='font-manrope'>
+                                        The {country.name} government requires{" "}
+                                        {visa.allowedNationalities?.length ?? 0} nationalities to get a {visa.type} to enter the country for Tourism. Now you can apply on our website easily and receive it by email.
+                                    </p>
+
+                                    {/* VISA SERVICE PACKAGE */}
                                     <div className='flex flex-col gap-2 border-1 border-gray-200 rounded-lg p-4'>
                                         <h2 className='text-lg font-semibold'>VISA SERVICE PACKAGE</h2>
                                         <p className='font-manrope'>Our service helps travelers obtain travel documents, simplifying the process so that you can better prepare for the trip. The package includes:</p>
-                                        <div className='flex gap-2'>
-                                            <SquareCheckBig className='w-6 h-6 text-[#16610E]' />
-                                            <p className='font-manrope'>Entry visa for a short period</p>
-                                        </div>
-                                        <div className='flex gap-2'>
-                                            <SquareCheckBig className='w-6 h-6 text-[#16610E]' />
-                                            <p className='font-manrope'>Application form filling assistance</p>
-                                        </div>
-                                        <div className='flex gap-2'>
-                                            <SquareCheckBig className='w-6 h-6 text-[#16610E]' />
-                                            <p className='font-manrope'>Travel insurance consultant</p>
-                                        </div>
-                                        <div className='flex gap-2'>
-                                            <SquareCheckBig className='w-6 h-6 text-[#16610E]' />
-                                            <p className='font-manrope'>Portal for real-time visa updates</p>
-                                        </div>
-                                        <div className='flex gap-2'>
-                                            <SquareCheckBig className='w-6 h-6 text-[#16610E]' />
-                                            <p className='font-manrope'>24/7 online support team for any issues</p>
-                                        </div>
-                                        <div className='flex gap-2'>
-                                            <SquareCheckBig className='w-6 h-6 text-[#16610E]' />
-                                            <p className='font-manrope'>Urgent case support, with added fees</p>
-                                        </div>
+                                        {[
+                                            "Entry visa for a short period",
+                                            "Application form filling assistance",
+                                            "Travel insurance consultant",
+                                            "Portal for real-time visa updates",
+                                            "24/7 online support team for any issues",
+                                            "Urgent case support, with added fees"
+                                        ].map((item) => (
+                                            <div key={item} className='flex gap-2'>
+                                                <SquareCheckBig className='w-6 h-6 text-[#16610E]' />
+                                                <p className='font-manrope'>{item}</p>
+                                            </div>
+                                        ))}
                                     </div>
+
+                                    {/* ETA INFORMATION */}
                                     <div className='flex flex-col gap-2 border-1 border-gray-200 rounded-lg p-4'>
                                         <h2 className='text-lg font-semibold'>ETA INFORMATION</h2>
                                         <ul className='list-disc list-inside'>
                                             <li className='font-manrope'>Single Entry</li>
-                                            <li className='font-manrope'>Stay duration: 90 days</li>
-                                            <li className='font-manrope'>Government & Admin fee: US$ 95.00</li>
-                                            <li className='font-manrope'>Service fee:
+                                            <li className='font-manrope'>Stay duration: {visa.visaDuration}</li>
+                                            <li className='font-manrope'>Government & Admin fee: US$ {visa.govFee.toFixed(2)}</li>
+                                            <li className='font-manrope'>
+                                                Service fee:
                                                 <button className="p-0 ml-2 bg-transparent border-none text-md underline text-blue-600 hover:text-blue-800 cursor-pointer">
                                                     See More
                                                 </button>
                                             </li>
                                         </ul>
                                     </div>
+
+                                    {/* HOW TO APPLY */}
                                     <div id='steps' className='flex flex-col gap-2'>
-                                        <p className='font-semibold uppercase text-lg'>HOW TO APPLY FOR {country.name} TOURIST ETA?</p>
-                                        <p className='font-manrope mb-4'>Fantastic! Kenya allows you to apply for an eTA (Electronic Travel Authorization) and now, you can easily apply for this eTA through our website following 3 simple steps below:</p>
+                                        <p className='font-semibold uppercase text-lg'>HOW TO APPLY FOR {country.name} {visa.type.toUpperCase()} ETA?</p>
+                                        <p className='font-manrope mb-4'>
+                                            Fantastic! {country.name} allows you to apply for an eTA (Electronic Travel Authorization) and now, you can easily apply for this eTA through our website following 3 simple steps below:
+                                        </p>
+
                                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
                                             {visaSteps.map(({ name, title, description, image }) => (
                                                 <Card
@@ -272,6 +286,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
                                                 </Card>
                                             ))}
                                         </div>
+
                                         <p className='text-center text-lg font-semibold mt-4 text-[#16610E]'>GET A ETA WITHIN 1 WORKING DAY</p>
                                         <Button className='bg-[#16610E] mt-2 uppercase mx-auto hover:bg-[#16610E]/80 w-1/3 cursor-pointer px-8 py-6 text-white text-xl sm:text-lg'>
                                             Apply Now
