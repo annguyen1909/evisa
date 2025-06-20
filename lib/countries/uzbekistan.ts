@@ -5,10 +5,11 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const uzbekistan: Country = {
   slug: 'uzbekistan',
   name: 'Uzbekistan',
+  code: 'uz',
   flagUrl: '/images/country/uzbekistan/uzbekistan-square.png',
   imageUrl: '/images/country/uzbekistan/uzbekistan-bg.jpg',
   roundedFlagUrl: '/images/country/uzbekistan/uzbekistan-rounded.png',
-  region: 'Central Asia',
+  region: 'Middle East',
   description: `Uzbekistan is a Silk Road country known for its ancient cities, stunning Islamic architecture, and vibrant bazaars. It is a crossroads of cultures and history.`,
   welcomeMessage: `Welcome to Uzbekistan! Wander the blue-tiled streets of Samarkand, explore the old city of Bukhara, and experience the hospitality of the Uzbek people. Discover the legacy of the Silk Road.`,
   welcomeImgUrl: '/images/country/uzbekistan/uzbekistan-welcome.jpg',
@@ -122,6 +123,7 @@ const uzbekistan: Country = {
       visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AL", "AO", "BD", "BH", "BO", "BT", "CI", "CN", "CO", "DZ", "EC", "EG", "FJ", "FM", "GW", "GY", "HK", "IN", "IR", "JO", "KH", "KI", "KP", "KW", "LA", "LB", "LK", "MA", "MH", "MK", "MU", "MV", "NP", "NR", "OM", "PE", "PH", "PW", "PY", "QA", "SA", "SB", "SC", "SR", "TH", "TN", "TO", "US", "UY", "VE", "VN", "VU", "WS"]
 };
 
 export default uzbekistan;

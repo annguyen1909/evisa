@@ -5,7 +5,8 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const benin: Country = {
   slug: 'benin',
   name: 'Benin',
-  region: 'West Africa',
+  region: 'Africa',
+  code: 'bj',
   flagUrl: '/images/country/benin/benin-square.png',
   imageUrl: '/images/country/benin/benin-bg.jpg',
   roundedFlagUrl: '/images/country/benin/benin-rounded.png',
@@ -122,6 +123,7 @@ const benin: Country = {
       visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AD", "AE", "AF", "AG", "AL", "AM", "AR", "AT", "AU", "AZ", "BA", "BB", "BD", "BE", "BG", "BH", "BN", "BO", "BR", "BS", "BT", "BY", "BZ", "CA", "CH", "CL", "CN", "CO", "CR", "CU", "CZ", "DE", "DK", "DM", "DOM", "EC", "EE", "ES", "FI", "FJ", "FR", "GA", "GB", "GD", "GE", "GL", "GM", "GR", "GT", "GY", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IQ", "IR", "IS", "IT", "JM", "JO", "JP", "KG", "KH", "KI", "KN", "KP", "KR", "KZ", "LA", "LB", "LC", "LI", "LK", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MH", "MK", "MN", "MO", "MT", "MV", "MX", "MY", "MZ", "NA", "NI", "NL", "NO", "NP", "NR", "NZ", "OM", "PA", "PE", "PG", "PH", "PK", "PL", "PR", "PS", "PT", "PW", "PY", "QA", "RE", "RO", "RU", "RW", "SA", "SB", "SE", "SG", "SI", "SK", "SM", "SR", "SV", "SY", "SZ", "TH", "TJ", "TM", "TO", "TR", "TT", "TV", "TW", "TZ", "US", "UY", "UZ", "VA", "VC", "VE", "VN", "VU", "WS", "YE"]
 };
 
 export default benin;

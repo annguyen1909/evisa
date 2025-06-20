@@ -2,7 +2,8 @@
 
 import * as React from "react";
 import { Check, ChevronsDown } from "lucide-react";
-
+import { COUNTRIES } from '@/lib/countries';
+import { NATIONALITIES } from '@/lib/nationalities';
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,13 +19,18 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useRouter } from "next/navigation"; // ✅
 
-import { COUNTRIES_DATA } from "@/lib/constants"; // Adjust path if needed
 
 // Transform countries into ComboBox format
-const countryOptions = COUNTRIES_DATA.map((country) => ({
+const countryOptions = COUNTRIES.map((country) => ({
   value: country.code.toLowerCase(),
   label: country.name,
+}));
+
+const nationalityOptions = NATIONALITIES.map((n) => ({
+  value: n.code.toLowerCase(),
+  label: n.name,
 }));
 
 // Reusable ComboBox component
@@ -109,29 +115,70 @@ function ComboBox({
 export default function CheckEligibility() {
   const [nationality, setNationality] = React.useState("");
   const [destination, setDestination] = React.useState("");
+  const router = useRouter();
 
-  const onCheck = () => {
+  const onCheck = async () => {
+    console.log("=== Starting Check ===");
+    console.log("Selected Nationality (slug):", nationality);
+    console.log("Selected Destination (slug):", destination);
     if (!nationality || !destination) {
       alert("Please select both nationality and destination.");
       return;
     }
-    alert(`Checking eligibility for ${nationality.toUpperCase()} to ${destination.toUpperCase()}`);
+    const destinationCountry = COUNTRIES.find(
+      (c) => c.code.toLowerCase() === destination
+    );
+
+    if (!destinationCountry) {
+      alert("Destination country not found.");
+      return;
+    }
+
+    const destinationSlug = destinationCountry.slug;
+
+    try {
+      // Import the selected destination's data file (e.g., "@/lib/countries/vietnam.ts")
+      const destinationModule = await import(`@/lib/countries/${destinationSlug}`);
+      const eligibleCountries: string[] = destinationModule.default.eligibleCountries;
+
+      // Find the nationality's name (e.g., 'Vietnam' from 'vn')
+      const nationalityName = nationalityOptions.find(
+        (n) => n.value === nationality.toLowerCase()
+      )?.label;
+
+      if (!nationalityName) {
+        alert("Could not find nationality name.");
+        return;
+      }
+
+      const isEligible = eligibleCountries.includes(nationality.toUpperCase());
+
+      if (isEligible) {
+        router.push(`/check-requirements?n=${nationality}&d=${destination}`);
+      } else {
+        router.push(`/check-requirements?n=${nationality}&d=${destination}`);
+      }
+    } catch (error) {
+      console.error("Failed to load destination data:", error);
+      alert("An error occurred while checking eligibility.");
+    }
   };
+
 
   return (
     <section className="w-full max-w-4xl mx-auto pt-0 px-4 max-md:px-0">
       <h2 className="text-2xl font-semibold mb-6 text-center">Check Your Visa Eligibility</h2>
       <form
-        onSubmit={(e) => {
+        onSubmit={async (e) => {
           e.preventDefault();
-          onCheck();
+          await onCheck();
         }}
         className="flex flex-col md:flex-row space-y-4 md:space-y-0 items-center justify-center"
       >
         <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 gap-0 w-full">
           <ComboBox
             label="Your Nationality"
-            options={countryOptions}
+            options={nationalityOptions}
             value={nationality}
             onChange={setNationality}
             placeholder="Select nationality"

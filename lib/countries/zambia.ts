@@ -5,7 +5,8 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const zambia: Country = {
   slug: 'zambia',
   name: 'Zambia',
-  region: 'Middle East',
+  code: 'zm',
+  region: 'Africa',
   flagUrl: '/images/country/zambia/zambia-square.png',
   imageUrl: '/images/country/zambia/zambia-bg.jpg',
   roundedFlagUrl: '/images/country/zambia/zambia-rounded.png',
@@ -122,6 +123,7 @@ const zambia: Country = {
       visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AD", "AF", "AL", "AM", "AR", "AS", "AW", "AZ", "BA", "BD", "BF", "BI", "BJ", "BN", "BO", "BR", "BT", "BY", "CD", "CG", "CH", "CI", "CL", "CM", "CO", "CR", "CU", "CV", "DJ", "DOM", "DZ", "EC", "EG", "ER", "ET", "FM", "GA", "GE", "GH", "GL", "GM", "GN", "GQ", "GT", "GW", "GY", "HK", "HN", "HT", "ID", "IL", "IN", "IR", "IS", "JO", "KG", "KH", "KM", "KP", "KZ", "LA", "LB", "LI", "LK", "LR", "MA", "MC", "MD", "MG", "MK", "ML", "MN", "MO", "MR", "MX", "NE", "NG", "NI", "NP", "PA", "PE", "PG", "PH", "PK", "PR", "PS", "PW", "PY", "RS", "RU", "RW", "SL", "SM", "SN", "SO", "SR", "ST", "SV", "SY", "TD", "TG", "TH", "TJ", "TL", "TM", "TN", "TR", "TW", "UA", "UY", "UZ", "VA", "VE", "VN", "YE"]
 };
 
 export default zambia;

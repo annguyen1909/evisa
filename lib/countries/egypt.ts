@@ -5,7 +5,7 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const egypt: Country = {
   slug: 'egypt',
   name: 'Egypt',
-  region: 'North Africa',
+  region: 'Africa',
   code: 'eg',
   flagUrl:'/images/country/egypt/egypt-square.png',
   imageUrl: '/images/country/egypt/egypt-bg.jpg',
@@ -123,6 +123,7 @@ const egypt: Country = {
       visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AE", "AL", "AM", "AR", "AT", "AU", "AZ", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CN", "CO", "CY", "CZ", "DE", "DK", "EC", "EE", "ES", "FI", "FR", "GB", "GE", "GR", "HK", "HR", "HU", "IE", "IN", "IS", "IT", "JP", "KR", "KW", "KZ", "LT", "LU", "LV", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NL", "NO", "NZ", "OM", "PE", "PL", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SM", "TW", "UA", "US", "UY", "VA", "VE", "XK", "ZA"]
 };
 
 export default egypt;

@@ -58,7 +58,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
             >
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out -z-10"
-                    style={{ backgroundImage: `url(${country.imageUrl})` }}
+                    style={{ backgroundImage: `url(/images/country/${country.name}/${country.name}-bg.jpg)` }}
                 />
 
                 <div className="flex flex-col max-w-5xl md:max-w-7xl w-2/3 max-md:items-center gap-2">
@@ -197,7 +197,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
                         <TabsContent key={tab.value} value={tab.value} className="mt-6">
                             <div className="flex flex-col lg:flex-row gap-6 items-center">
                                 <div className="max-w-4xl mx-auto flex flex-col gap-2 text-md sm:text-xl space-y-4" style={{ fontFamily: 'Roboto' }}>
-                                    <p className='font-manrope'>The {country.name} government requires 194 nationalities to get a {tab.visaType} to enter the country for Tourism. Now you can apply on our website easily and receive it by email.</p>
+                                    <p className='font-manrope'>The {country.name} government requires {country.eligibleCountries.length} nationalities to get a {tab.visaType} to enter the country for Tourism. Now you can apply on our website easily and receive it by email.</p>
                                     <div className='flex flex-col gap-2 border-1 border-gray-200 rounded-lg p-4'>
                                         <h2 className='text-lg font-semibold'>VISA SERVICE PACKAGE</h2>
                                         <p className='font-manrope'>Our service helps travelers obtain travel documents, simplifying the process so that you can better prepare for the trip. The package includes:</p>

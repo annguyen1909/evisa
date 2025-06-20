@@ -5,7 +5,7 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const malawi: Country = {
   slug: 'malawi',
   name: 'Malawi',
-  region: 'Southeast Africa',
+  region: 'Africa',
   code: 'mw',
   flagUrl:'/images/country/malawi/malawi-square.png',
   imageUrl: '/images/country/malawi/malawi-bg.jpg',
@@ -123,6 +123,7 @@ const malawi: Country = {
       visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AD", "AE", "AF", "AL", "AM", "AO", "AR", "AT", "AU", "AZ", "BA", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BN", "BO", "BR", "BT", "BY", "CA", "CD", "CG", "CH", "CI", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CY", "CZ", "DE", "DJ", "DK", "DOM", "DZ", "EC", "EE", "EG", "ER", "ES", "ET", "FI", "FM", "FR", "GA", "GB", "GE", "GH", "GL", "GN", "GQ", "GR", "GT", "GW", "GY", "HN", "HR", "HT", "HU", "ID", "IN", "IQ", "IS", "IT", "JO", "JP", "KG", "KH", "KM", "KN", "KP", "KR", "KW", "KZ", "LA", "LB", "LI", "LK", "LR", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MG", "MH", "MK", "ML", "MN", "MO", "MR", "MT", "MV", "MX", "NE", "NG", "NI", "NL", "NO", "NP", "NZ", "OM", "PA", "PC", "PE", "PG", "PH", "PK", "PL", "PS", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SE", "SG", "SI", "SK", "SL", "SM", "SN", "SO", "SR", "ST", "SV", "SY", "TD", "TG", "TH", "TJ", "TL", "TM", "TN", "TO", "TR", "TW", "UA", "US", "UY", "UZ", "VA", "VE", "VN", "VU", "XK", "YE"]
 };
 
 export default malawi;

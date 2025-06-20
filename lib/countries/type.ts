@@ -9,6 +9,7 @@ export type Country = {
   imageUrl?: string; // Optional image URL for the country
   welcomeImgUrl?: string;
   region?: string;
+  eligibleCountries: string[];
   etaInfo: {
     intro: string;
     processing: {
@@ -52,4 +53,4 @@ export type Country = {
     language: string;
     currency: string;
   };
-};
+}

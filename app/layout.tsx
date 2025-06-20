@@ -54,7 +54,6 @@ export default function RootLayout({
         <TopBanner />
         <Navbar />
         {children}
-        <Sticky />
         <Footer />
       </body>
     </html>

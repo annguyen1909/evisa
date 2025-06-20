@@ -5,7 +5,8 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const southafrica: Country = {
   slug: 'south-africa',
   name: 'South Africa',
-  region: 'Southern Africa',
+  code: 'za',
+  region: 'Africa',
   flagUrl: '/images/country/south-africa/south-africa-square.png',
   imageUrl: '/images/country/south-africa/south-africa-bg.jpg',
   roundedFlagUrl: '/images/country/south-africa/south-africa-rounded.png',
@@ -122,6 +123,7 @@ const southafrica: Country = {
       visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AL", "BG", "BY", "CD", "CG", "CI", "CM", "CN", "CR", "CU", "DZ", "EG", "ET", "GH", "GN", "HR", "ID", "IN", "IR", "KE", "KM", "LR", "LT", "MA", "ML", "MX", "NE", "NG", "OM", "PH", "PK", "RO", "SA", "SK", "SN", "UG"]
 };
 
 export default southafrica;

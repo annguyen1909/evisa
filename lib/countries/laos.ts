@@ -5,7 +5,7 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const laos: Country = {
   slug: 'laos',
   name: 'Laos',
-  region: 'Southeast Asia',
+  region: 'Asia Pacific',
   code: 'la',
   flagUrl:'/images/country/laos/laos-square.png',
   imageUrl: '/images/country/laos/laos-bg.jpg',
@@ -123,6 +123,7 @@ const laos: Country = {
       visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AD", "AE", "AG", "AL", "AM", "AO", "AR", "AT", "AU", "AZ", "BA", "BB", "BE", "BF", "BG", "BH", "BJ", "BO", "BR", "BS", "BT", "BW", "BY", "BZ", "CA", "CH", "CL", "CN", "CO", "CR", "CU", "CV", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "EC", "EE", "EG", "ER", "ES", "ET", "FI", "FJ", "FM", "FR", "GA", "GB", "GD", "GE", "GM", "GQ", "GR", "GT", "GY", "HK", "HN", "HR", "HT", "HU", "IE", "IL", "IN", "IS", "IT", "JM", "JP", "KE", "KG", "KI", "KM", "KN", "KP", "KW", "KZ", "LC", "LI", "LK", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MG", "MH", "MK", "ML", "MO", "MR", "MT", "MU", "MV", "MW", "MX", "NA", "NI", "NL", "NO", "NP", "NZ", "OM", "PA", "PE", "PG", "PL", "PS", "PT", "PW", "PY", "QA", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SE", "SI", "SK", "SM", "SO", "ST", "SV", "TD", "TG", "TJ", "TL", "TM", "TN", "TR", "TT", "TV", "TW", "TZ", "UA", "US", "UY", "UZ", "VC", "VE", "VU", "WS", "XK", "YE", "ZA"]
 };
 
 export default laos;

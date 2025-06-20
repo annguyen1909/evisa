@@ -5,7 +5,8 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const newzealand: Country = {
   slug: 'new-zealand',
   name: 'New Zealand',
-  region: 'Oceania',
+  code: 'nz',
+  region: 'Asia Pacific',
   flagUrl: '/images/country/new-zealand/new-zealand-square.png',
   imageUrl: '/images/country/new-zealand/new-zealand-bg.jpg',
   roundedFlagUrl: '/images/country/new-zealand/new-zealand-rounded.png',
@@ -122,6 +123,7 @@ const newzealand: Country = {
       visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AD", "AE", "AR", "AT", "BE", "BG", "BH", "BN", "BR", "CA", "CH", "CL", "CY", "CZ", "DE", "DK", "EE", "ES", "FI", "FR", "GB", "GR", "HK", "HR", "HU", "IE", "IL", "IO", "IS", "IT", "JP", "KR", "KW", "LI", "LT", "LU", "LV", "MC", "MO", "MT", "MU", "MX", "MY", "NL", "NO", "OM", "PL", "PT", "QA", "RO", "SA", "SC", "SE", "SG", "SI", "SK", "SM", "TW", "US", "UY", "VA"]
 };
 
 export default newzealand;

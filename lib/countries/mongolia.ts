@@ -5,7 +5,7 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const mongolia: Country = {
   slug: 'mongolia',
   name: 'Mongolia',
-  region: 'East Asia',
+  region: 'Asia Pacific',
   code: 'mn',
   flagUrl:'/images/country/mongolia/mongolia-square.png',
   imageUrl: '/images/country/mongolia/mongolia-bg.jpg',
@@ -123,6 +123,7 @@ const mongolia: Country = {
       visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AD", "AG", "AL", "AM", "AO", "BA", "BB", "BG", "BI", "BJ", "BN", "BO", "BS", "BT", "BW", "BZ", "CD", "CG", "CI", "CN", "CO", "CR", "CU", "CV", "DJ", "DM", "ER", "ET", "FJ", "FM", "GA", "GD", "GH", "GM", "GN", "GQ", "GT", "GW", "GY", "HN", "HT", "IN", "JM", "KE", "KH", "KI", "KM", "KN", "KW", "LC", "LS", "MD", "ME", "MG", "MH", "MK", "MR", "MU", "MW", "MX", "MZ", "NA", "NI", "NP", "NR", "PA", "PG", "PW", "PY", "RW", "SA", "SB", "SC", "SL", "SM", "SN", "SR", "ST", "SV", "SZ", "TG", "TL", "TO", "TT", "TV", "TW", "TZ", "UG", "VA", "VC", "VE", "VN", "VU", "WS", "ZA", "ZM", "ZW"]
 };
 
 export default mongolia;

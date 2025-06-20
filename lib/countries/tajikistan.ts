@@ -5,7 +5,8 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const tajikistan: Country = {
   slug: 'tajikistan',
   name: 'Tajikistan',
-  region: 'Central Asia',
+  code: 'tj',
+  region: 'Asia Pacific',
   flagUrl: '/images/country/tajikistan/tajikistan-square.png',
   imageUrl: '/images/country/tajikistan/tajikistan-bg.jpg',
   roundedFlagUrl: '/images/country/tajikistan/tajikistan-rounded.png',
@@ -122,6 +123,7 @@ const tajikistan: Country = {
       visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AD", "AE", "AG", "AL", "AM", "AO", "AT", "AU", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BJ", "BN", "BO", "BR", "BS", "BT", "BW", "BY", "BZ", "CA", "CD", "CG", "CH", "CL", "CM", "CN", "CO", "CR", "CU", "CY", "CZ", "DE", "DK", "DM", "DOM", "DZ", "EC", "EE", "EG", "ES", "FI", "FJ", "FR", "GB", "GD", "GH", "GR", "GT", "GY", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IQ", "IS", "IT", "JM", "JO", "JP", "KE", "KH", "KN", "KR", "LA", "LB", "LC", "LI", "LK", "LT", "LU", "LV", "MA", "MC", "ME", "MK", "MN", "MO", "MT", "MU", "MV", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PG", "PH", "PK", "PL", "PT", "PY", "QA", "RO", "RS", "SA", "SC", "SE", "SG", "SI", "SK", "SM", "SN", "SR", "SV", "TH", "TM", "TN", "TR", "TT", "TW", "US", "UY", "UZ", "VC", "VE", "VN", "ZA"]
 };
 
 export default tajikistan;

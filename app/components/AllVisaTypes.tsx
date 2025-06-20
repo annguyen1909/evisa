@@ -3,12 +3,15 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Backpack, BriefcaseBusiness, Plane, BriefcaseMedical } from "lucide-react";
+import React from "react";
 
 type VisaType = {
   name: string;
   description: string;
   color: string;
   favorites?: { name: string; img: string }[];
+  icon?: React.ElementType;
 };
 
 const visaTypes: VisaType[] = [
@@ -22,6 +25,7 @@ const visaTypes: VisaType[] = [
       { name: "Cambodia", img: "/images/flags/cambodia.png" },
       { name: "Sri Lanka", img: "/images/flags/sri-lanka.png" },
     ],
+    icon: Backpack
   },
   {
     name: "BUSINESS VISA",
@@ -33,6 +37,7 @@ const visaTypes: VisaType[] = [
       { name: "Bahrain", img: "/images/flags/bahrain.png" },
       { name: "India", img: "/images/flags/india.png" },
     ],
+    icon: BriefcaseBusiness
   },
   {
     name: "TRANSIT VISA",
@@ -44,6 +49,7 @@ const visaTypes: VisaType[] = [
       { name: "Rwanda", img: "/images/flags/rwanda.png" },
       { name: "Tanzania", img: "/images/flags/tanzania.png" },
     ],
+    icon: Plane
   },
   {
     name: "MEDICAL VISA",
@@ -55,29 +61,32 @@ const visaTypes: VisaType[] = [
       { name: "Malaysia", img: "/images/flags/malaysia.png" },
       { name: "UK", img: "/images/flags/united-kingdom.png" },
     ],
+    icon: BriefcaseMedical
   },
 ];
 
 export default function AllVisaTypes() {
   return (
     <section className="w-full max-w-7xl mx-auto py-6 px-4">
-      <h2 className="text-2xl sm:text-3xl font-manrope font-bold mb-12 text-center text-[#16610E]">
+      <h2 className="text-2xl sm:text-3xl font-manrope font-bold mb-2 text-center text-[#16610E]">
         All eVisa Types. One Place.
       </h2>
-
+      <h2 className="text-sm sm:text-lg text-gray-600 mb-6 text-center">Explore and apply for all available eVisa types in one convenient platform — fast, secure, and hassle-free.</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-        {visaTypes.map(({ name, description, color, favorites }) => (
+        {visaTypes.map(({ name, description, color, favorites, icon }) => (
           <Card
             key={name}
             className="flex flex-col h-full justify-between transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
-            style={{ }}
+            style={{}}
           >
-            <CardHeader className="rounded-t-xl p-2" style={{backgroundColor: color}}>
-              <CardTitle className="font-extrabold text-white text-lg pt-2 sm:text-xl text-center">
-                {name}
-              </CardTitle>
+            <CardHeader className="rounded-t-xl pt-4 pb-2" style={{ backgroundColor: color }}>
+              <div className="flex items-center justify-center gap-2">
+                {icon && React.createElement(icon, { size: 32, color: "#fff", strokeWidth: "1.5px" })}
+                <CardTitle className="font-semibold text-white text-lg pt-0.75 sm:text-2xl text-center">
+                  {name}
+                </CardTitle>
+              </div>
             </CardHeader>
-
             <CardContent>
               <p className="text-gray-600 text-sm text-center leading-relaxed">
                 {description}

@@ -202,7 +202,7 @@ export default function DestinationClient() {
                         "px-4 py-2 rounded-lg cursor-pointer transition-colors",
                         region === r
                           ? "data-[selected=true]:bg-[#16610E]/10 data-[selected=true]:text-[#16610E] font-semibold"
-                          : "data-[selected=true]:hover:bg-[#16610E]/5"
+                          : "data-[selected=true]:hover:bg-[#16610E]/5 whitespace-nowrap"
                       )}
                     >
                       {r}
@@ -219,18 +219,28 @@ export default function DestinationClient() {
         {paginatedCountries.map((country) => (
           <Card
             key={country.slug}
-            className="cursor-pointer overflow-hidden pt-0 pb-4 rounded-xl hover:shadow-xl transition-shadow duration-300"
+            className="cursor-pointer overflow-hidden py-0 rounded-xl hover:shadow-xl transition-shadow duration-300"
           >
             <Link href={`/destination/${country.slug}${page > 1 ? `?page=${page}` : ""}`}>
               <Image
-                src={`${country.imageUrl}`}
-                alt={`${country.name} flag`}
+                src={`/images/country/${country.slug}/${country.slug}-bg.jpg`}
+                alt={`${country.name} background`}
                 width={500}
                 height={300}
-                className="w-full object-cover h-36 max-md:h-72"
+                className="w-full object-cover h-36 max-md:h-30"
               />
               <CardHeader className="text-center">
-                <CardTitle className="text-md uppercase mt-4">{country.name}</CardTitle>
+                <div className="flex items-center justify-center text-center gap-2 pt-1 my-3">
+                  <Image
+                    src={`https://flagcdn.com/${country.code}.svg`}
+                    alt={`${country.name} Flag`}
+                    width={30}
+                    height={30}
+                    className=""
+                  />
+                  <CardTitle className="text-md max-md:text-sm uppercase whitespace-nowrap">{country.name}</CardTitle>
+                </div>
+
               </CardHeader>
             </Link>
           </Card>
@@ -242,7 +252,7 @@ export default function DestinationClient() {
           <button
             key={idx + 1}
             onClick={() => handlePageChange(idx + 1)}
-            className={`w-9 h-9 rounded-full font-semibold border border-gray-300 flex items-center justify-center transition
+            className={`w-9 h-9 rounded-md font-semibold border border-gray-300 flex items-center justify-center transition
               ${page === idx + 1
                 ? "bg-[#16610E] text-white border-[#16610E]"
                 : "bg-white text-[#16610E] hover:bg-[#16610E]/10"}`}

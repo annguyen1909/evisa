@@ -5,6 +5,7 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const oman: Country = {
   slug: 'oman',
   name: 'Oman',
+  code: 'om',
   region: 'Middle East',
   flagUrl: '/images/country/oman/oman-square.png',
   imageUrl: '/images/country/oman/oman-bg.jpg',
@@ -122,6 +123,7 @@ const oman: Country = {
         visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AD", "AF", "AG", "AL", "AM", "AO", "AR", "AS", "AT", "AU", "AZ", "BA", "BE", "BF", "BG", "BN", "BO", "BR", "BT", "BY", "CA", "CH", "CL", "CN", "CO", "CR", "CU", "CZ", "DE", "DK", "DM", "DZ", "EC", "EE", "ES", "FI", "FR", "GB", "GE", "GN", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IR", "IS", "IT", "JP", "KZ", "LA", "LB", "LI", "LS", "LT", "LU", "LV", "MA", "MC", "MD", "MK", "ML", "MT", "MV", "MX", "MY", "NA", "NE", "NI", "NL", "NO", "NR", "NZ", "PA", "PE", "PL", "PT", "PY", "RO", "SC", "SE", "SG", "SI", "SK", "SM", "SN", "SR", "SV", "TH", "TJ", "TM", "TR", "TW", "US", "UY", "UZ", "VA", "VE", "VN", "ZA"]
 };
 
 export default oman;

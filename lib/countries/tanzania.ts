@@ -5,7 +5,8 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const tanzania: Country = {
   slug: 'tanzania',
   name: 'Tanzania',
-  region: 'East Africa',
+  code: 'tz',
+  region: 'Africa',
   flagUrl: '/images/country/tanzania/tanzania-square.png',
   imageUrl: '/images/country/tanzania/tanzania-bg.jpg',
   roundedFlagUrl: '/images/country/tanzania/tanzania-rounded.png',
@@ -122,6 +123,7 @@ const tanzania: Country = {
       visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AD", "AE", "AL", "AM", "AN", "AO", "AR", "AS", "AT", "AU", "AW", "AX", "BA", "BE", "BF", "BG", "BH", "BJ", "BL", "BO", "BQ", "BR", "BT", "BV", "BY", "CA", "CD", "CG", "CH", "CI", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "ET", "FI", "FJ", "FM", "FO", "FR", "GA", "GB", "GE", "GF", "GL", "GN", "GP", "GR", "GS", "GT", "GU", "GW", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IS", "IT", "JO", "JP", "KG", "KH", "KM", "KR", "KW", "LA", "LI", "LR", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MF", "MH", "MK", "MN", "MP", "MQ", "MV", "MX", "NC", "NI", "NL", "NO", "NP", "NZ", "OM", "PA", "PE", "PF", "PH", "PL", "PN", "PR", "PT", "PW", "PY", "QA", "RE", "RS", "RU", "SA", "SE", "SI", "SJ", "SK", "SM", "SN", "SR", "ST", "SV", "SX", "TF", "TG", "TH", "TL", "TM", "TN", "TR", "TW", "UA", "UY", "VA", "VE", "VI", "VN", "WF", "YT"]
 };
 
 export default tanzania;

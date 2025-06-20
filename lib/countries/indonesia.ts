@@ -5,7 +5,7 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const indonesia: Country = {
   slug: 'indonesia',
   name: 'Indonesia',
-  region: 'South East Asia',
+  region: 'Asia Pacific',
   code: 'id',
   flagUrl:'/images/country/indonesia/indonesia-square.png',
   imageUrl: '/images/country/indonesia/indonesia-bg.jpg',
@@ -123,6 +123,7 @@ const indonesia: Country = {
       visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AD", "AE", "AL", "AM", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BN", "BR", "BY", "CA", "CH", "CL", "CN", "CO", "CY", "CZ", "DE", "DK", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HR", "HU", "IE", "IN", "IS", "IT", "JO", "JP", "KE", "KH", "KR", "KW", "KZ", "LA", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MV", "MX", "MY", "MZ", "NL", "NO", "NZ", "OM", "PA", "PE", "PG", "PH", "PL", "PS", "PT", "QA", "RO", "RS", "RU", "RW", "SA", "SC", "SE", "SG", "SI", "SK", "SM", "SR", "TH", "TL", "TN", "TR", "TW", "TZ", "UA", "US", "UZ", "VA", "VE", "VN", "ZA"]
 };
 
 export default indonesia;

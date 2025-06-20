@@ -5,7 +5,7 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const kyrgyzstan: Country = {
   slug: 'kyrgyzstan',
   name: 'Kyrgyzstan',
-  region: 'Central Asia',
+  region: 'Middle East',
   code: 'kg',
   flagUrl:'/images/country/kyrgyzstan/kyrgyzstan-square.png',
   imageUrl: '/images/country/kyrgyzstan/kyrgyzstan-bg.jpg',
@@ -123,6 +123,7 @@ const kyrgyzstan: Country = {
       visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["BD", "DZ", "EG", "IN", "JO", "LB", "LK", "MA", "NP", "PK", "TN", "VE", "ZA"]
 };
 
 export default kyrgyzstan;

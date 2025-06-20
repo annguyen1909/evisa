@@ -55,8 +55,8 @@ export default function AllVisaTypes() {
             className="flex flex-col h-full transition-transform gap-2 p-8 hover:scale-[1.02] hover:shadow-lg"
             style={{ color: "#16610E" }}
           >
-            <CardHeader>
-              <CardTitle className="font-extrabold text-5xl sm:text-4xl text-center">
+            <CardHeader className="">
+              <CardTitle className="flex items-center justify-center w-16 h-16 sm:w-14 sm:h-14 rounded-full bg-[#16610E] text-white text-3xl font-extrabold text-center mx-auto">
                 {name}
               </CardTitle>
             </CardHeader>
@@ -71,7 +71,7 @@ export default function AllVisaTypes() {
               <CardTitle className="font-extrabold mb-2 text-center text-2xl sm:text-lg">
                 {title}
               </CardTitle>
-              <p className="text-gray-600 text-sm text-center leading-relaxed">
+              <p className="text-gray-600 text-md text-center leading-relaxed">
                 {description}
               </p>
             </CardContent>

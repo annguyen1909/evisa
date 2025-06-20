@@ -5,7 +5,7 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const kazakhstan: Country = {
   slug: 'kazakhstan',
   name: 'Kazakhstan',
-  region: 'Central Asia',
+  region: 'Asia Pacific',
   code: 'kz',
   flagUrl:'/images/country/kazakhstan/kazakhstan-square.png',
   imageUrl: '/images/country/kazakhstan/kazakhstan-bg.jpg',
@@ -123,6 +123,7 @@ const kazakhstan: Country = {
       visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AD", "AG", "AO", "BA", "BB", "BD", "BF", "BI", "BJ", "BN", "BO", "BT", "BW", "BZ", "CG", "CI", "CM", "CN", "CR", "CU", "DJ", "DM", "DO", "DZ", "EG", "ER", "ET", "FJ", "FM", "GA", "GD", "GH", "GM", "GN", "GW", "GY", "HK", "HN", "HT", "IN", "JM", "KE", "KH", "KI", "KM", "KN", "KP", "LA", "LB", "LC", "LK", "LR", "LS", "MA", "ME", "MG", "MH", "MK", "ML", "MO", "MR", "MU", "MV", "MW", "MZ", "NA", "NE", "NG", "NI", "NP", "NR", "PA", "PE", "PG", "PW", "PY", "RW", "SC", "SL", "SM", "SN", "SR", "ST", "SV", "SZ", "TD", "TG", "TM", "TN", "TO", "TT", "TV", "TZ", "UG", "UY", "VE", "VU", "WS", "ZA", "ZM", "ZW"]
 };
 
 export default kazakhstan;

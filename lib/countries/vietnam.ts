@@ -5,7 +5,8 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const vietnam: Country = {
   slug: 'vietnam',
   name: 'Vietnam',
-  region: 'South East Asia',
+  region: 'Asia Pacific',
+  code: 'vn',
   flagUrl: '/images/country/vietnam/vietnam-square.png',
   imageUrl: '/images/country/vietnam/vietnam-bg.jpg',
   roundedFlagUrl: '/images/country/vietnam/vietnam-rounded.png',
@@ -101,27 +102,28 @@ const vietnam: Country = {
 
   visaTabs: [
     {
-        value: "tourist",
-        color: "#065BB9",
-        title: "Tourism",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Tourist ETA",
+      value: "tourist",
+      color: "#065BB9",
+      title: "Tourism",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Tourist ETA",
     },
     {
-        value: "business",
-        color: "#CB6601",
-        title: "Business",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Business ETA",
+      value: "business",
+      color: "#CB6601",
+      title: "Business",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Business ETA",
     },
     {
-        value: "medical",
-        color: "#16610E",
-        title: "Medical",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Medical ETA",
+      value: "medical",
+      color: "#16610E",
+      title: "Medical",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AD", "AE", "AF", "AG", "AL", "AM", "AO", "AR", "AT", "AU", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BM", "BN", "BO", "BR", "BS", "BT", "BW", "BY", "BZ", "CA", "CG", "CH", "CI", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CY", "CZ", "DE", "DJ", "DK", "DM", "DOM", "DZ", "EC", "EE", "EG", "ER", "ES", "ET", "FI", "FJ", "FM", "FR", "GA", "GB", "GD", "GE", "GH", "GI", "GL", "GM", "GN", "GQ", "GR", "GT", "GW", "GY", "HK", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IN", "IO", "IQ", "IR", "IS", "IT", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KR", "KW", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MG", "MH", "MK", "ML", "MN", "MO", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NE", "NG", "NI", "NL", "NO", "NP", "NR", "NZ", "OM", "PA", "PE", "PG", "PH", "PK", "PL", "PS", "PT", "PW", "PY", "QA", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SE", "SG", "SI", "SK", "SL", "SM", "SN", "SO", "SR", "ST", "SV", "SY", "SZ", "TD", "TG", "TH", "TJ", "TL", "TM", "TN", "TO", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "US", "UY", "UZ", "VA", "VC", "VE", "VU", "WS", "XK", "YE", "ZA", "ZM", "ZW"]
 };
 
 export default vietnam;

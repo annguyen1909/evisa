@@ -5,7 +5,7 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const malaysia: Country = {
   slug: 'malaysia',
   name: 'Malaysia',
-  region: 'South East Asia',
+  region: 'Asia Pacific',
   code: 'my',
   flagUrl:'/images/country/malaysia/malaysia-square.png',
   imageUrl: '/images/country/malaysia/malaysia-bg.jpg',
@@ -123,6 +123,7 @@ const malaysia: Country = {
       visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AE", "AF", "AL", "AM", "AO", "AR", "AT", "AZ", "BA", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BN", "BO", "BR", "BT", "BY", "CA", "CD", "CG", "CI", "CL", "CM", "CO", "CR", "CU", "CV", "CZ", "DE", "DJ", "DK", "EE", "EG", "ER", "ES", "ET", "FI", "FR", "GA", "GE", "GH", "GN", "GQ", "GR", "GT", "HK", "HN", "HR", "HT", "HU", "ID", "IQ", "IR", "IS", "IT", "JO", "JP", "KG", "KH", "KM", "KR", "KW", "KZ", "LA", "LB", "LK", "LR", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MG", "MK", "ML", "MN", "MO", "MR", "MX", "MZ", "NE", "NG", "NI", "NO", "NP", "OM", "PA", "PE", "PH", "PK", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "RW", "SA", "SE", "SI", "SK", "SN", "SO", "SR", "ST", "SV", "SY", "TD", "TG", "TH", "TJ", "TM", "TN", "TW", "UA", "US", "UY", "UZ", "VA", "VE", "VN", "XK", "YE"]
 };
 
 export default malaysia;

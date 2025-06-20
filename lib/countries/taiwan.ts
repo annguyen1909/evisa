@@ -5,7 +5,8 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const taiwan: Country = {
   slug: 'taiwan',
   name: 'Taiwan',
-  region: 'East Asia',
+  code: 'tw',
+  region: 'Asia Pacific',
   flagUrl: '/images/country/taiwan/taiwan-square.png',
   imageUrl: '/images/country/taiwan/taiwan-bg.jpg',
   roundedFlagUrl: '/images/country/taiwan/taiwan-rounded.png',
@@ -122,6 +123,7 @@ const taiwan: Country = {
       visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AE", "BA", "BF", "BH", "CO", "DM", "EC", "KI", "KW", "ME", "MU", "OM", "PA", "PE", "QA", "SA", "SB", "TR", "XK"]
 };
 
 export default taiwan;

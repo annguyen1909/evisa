@@ -7,8 +7,8 @@ const kuwait: Country = {
   name: 'Kuwait',
   region: 'Middle East',
   code: 'kw',
-  flagUrl:'/images/flags/vietnam.png',
-  imageUrl: '/images/country/vietnam-bg.jpg',
+  flagUrl: '/images/flags/vietnam.png',
+  imageUrl: '/images/country/kuwait/kuwait-bg.jpg',
   roundedFlagUrl: '/images/flags/vietnam.png',
   description: `Kuwait is a small, oil-rich country on the Arabian Gulf, known for its modern architecture, vibrant souks, and rich maritime history.`,
   welcomeMessage: `Welcome to Kuwait! Visit the iconic Kuwait Towers, explore the Grand Mosque, and stroll along the Corniche. Experience Kuwaiti hospitality and culture.`,
@@ -102,27 +102,28 @@ const kuwait: Country = {
 
   visaTabs: [
     {
-        value: "tourist",
-        color: "#065BB9",
-        title: "Tourism",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Tourist ETA",
+      value: "tourist",
+      color: "#065BB9",
+      title: "Tourism",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Tourist ETA",
     },
     {
-        value: "business",
-        color: "#CB6601",
-        title: "Business",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Business ETA",
+      value: "business",
+      color: "#CB6601",
+      title: "Business",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Business ETA",
     },
     {
-        value: "medical",
-        color: "#16610E",
-        title: "Medical",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Medical ETA",
+      value: "medical",
+      color: "#16610E",
+      title: "Medical",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AD", "AT", "AU", "BE", "BG", "BN", "BT", "CA", "CH", "CY", "CZ", "DE", "DK", "EE", "ES", "FI", "FR", "GB", "GE", "GR", "HK", "HR", "HU", "IE", "IS", "IT", "JP", "KH", "LA", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NL", "NO", "NZ", "PL", "PT", "RO", "SE", "SG", "SI", "SK", "SM", "TR", "UA", "US", "VA"]
 };
 
 export default kuwait;

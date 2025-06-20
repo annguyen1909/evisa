@@ -5,9 +5,9 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const india: Country = {
   slug: 'india',
   name: 'India',
-  region: 'South Asia',
+  region: 'Asia Pacific',
   code: 'in',
-  flagUrl:'/images/flags/vietnam.png',
+  flagUrl: '/images/flags/vietnam.png',
   imageUrl: '/images/country/vietnam-bg.jpg',
   roundedFlagUrl: '/images/flags/vietnam.png',
   description: `India is a vast and diverse country, known for its rich history, vibrant culture, and incredible landscapes. From the Himalayas to the beaches of Goa, India offers a unique experience for every traveler.`,
@@ -123,6 +123,7 @@ const india: Country = {
       visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AD", "AE", "AG", "AI", "AL", "AM", "AO", "AR", "AT", "AU", "AW", "AZ", "BA", "BB", "BE", "BG", "BI", "BJ", "BN", "BO", "BR", "BS", "BW", "BY", "BZ", "CA", "CH", "CI", "CK", "CL", "CM", "CO", "CR", "CU", "CV", "CY", "CZ", "DE", "DJ", "DK", "DM", "DOM", "EC", "EE", "ER", "ES", "FI", "FJ", "FM", "FR", "GA", "GB", "GD", "GE", "GH", "GM", "GN", "GQ", "GR", "GT", "GY", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IS", "IT", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KR", "KY", "KZ", "LA", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "MC", "MD", "ME", "MG", "MH", "MK", "ML", "MN", "MS", "MT", "MU", "MW", "MX", "MY", "MZ", "NA", "NE", "NI", "NL", "NO", "NR", "NU", "NZ", "OM", "PA", "PE", "PG", "PH", "PL", "PS", "PT", "PW", "PY", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SE", "SG", "SI", "SK", "SL", "SM", "SN", "SR", "SV", "SZ", "TC", "TG", "TH", "TJ", "TL", "TO", "TT", "TV", "TW", "TZ", "UA", "UG", "US", "UY", "UZ", "VA", "VC", "VE", "VN", "VU", "WS", "ZA", "ZM", "ZW"]
 };
 
 export default india;

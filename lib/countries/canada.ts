@@ -5,7 +5,8 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const canada: Country = {
   slug: 'canada',
   name: 'Canada',
-  region: 'North America',
+  region: 'America - Caribbean',
+  code: 'ca',
   flagUrl: '/images/country/canada/canada-square.png',
   imageUrl: '/images/country/canada/canada-bg.jpg',
   roundedFlagUrl: '/images/country/canada/canada-rounded.png',
@@ -101,27 +102,28 @@ const canada: Country = {
 
   visaTabs: [
     {
-        value: "tourist",
-        color: "#065BB9",
-        title: "Tourism",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Tourist ETA",
+      value: "tourist",
+      color: "#065BB9",
+      title: "Tourism",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Tourist ETA",
     },
     {
-        value: "business",
-        color: "#CB6601",
-        title: "Business",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Business ETA",
+      value: "business",
+      color: "#CB6601",
+      title: "Business",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Business ETA",
     },
     {
-        value: "medical",
-        color: "#16610E",
-        title: "Medical",
-        subtitle: "Single Entry for 90 days",
-        visaType: "Medical ETA",
+      value: "medical",
+      color: "#16610E",
+      title: "Medical",
+      subtitle: "Single Entry for 90 days",
+      visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AD", "AE", "AI", "AT", "AU", "BB", "BE", "BG", "BM", "BN", "BS", "CH", "CL", "CY", "CZ", "DE", "DK", "EE", "ES", "FI", "FK", "FR", "GI", "GR", "HK", "HR", "HU", "IE", "IL", "IO", "IS", "IT", "JP", "KR", "KY", "LI", "LT", "LU", "LV", "MC", "MS", "MT", "NL", "NO", "NZ", "PG", "PL", "PN", "PT", "RO", "SB", "SE", "SG", "SH", "SI", "SK", "SM", "TC", "TW", "VA", "VG", "WS"]
 };
 
 export default canada;

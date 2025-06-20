@@ -5,6 +5,7 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const unitedkingdom: Country = {
   slug: 'united-kingdom',
   name: 'United Kingdom',
+  code: 'gb',
   region: 'Europe',
   flagUrl: '/images/country/united-kingdom/united-kingdom-square.png',
   imageUrl: '/images/country/united-kingdom/united-kingdom-bg.jpg',
@@ -122,6 +123,7 @@ const unitedkingdom: Country = {
         visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AE", "BH", "KW", "OM", "QA", "SA"]
 };
 
 export default unitedkingdom;

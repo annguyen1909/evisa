@@ -123,6 +123,7 @@ const Moldova: Country = {
         visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AF", "AO", "BD", "BF", "BH", "BI", "BJ", "BO", "BT", "BW", "BZ", "CD", "CG", "CI", "CM", "CN", "CV", "DJ", "DM", "DZ", "EG", "ER", "ET", "FJ", "GA", "GH", "GM", "GN", "GQ", "GW", "GY", "HK", "HT", "HU", "ID", "IN", "IQ", "IR", "JM", "JO", "KE", "KH", "KM", "KP", "KW", "LA", "LB", "LK", "LR", "LS", "MA", "MG", "ML", "MN", "MR", "MV", "MW", "MZ", "NA", "NE", "NG", "NP", "NR", "OM", "PG", "PH", "PK", "PS", "QA", "RW", "SA", "SL", "SN", "SO", "SR", "ST", "SY", "SZ", "TD", "TG", "TH", "TM", "TN", "TZ", "UG", "VN", "YE", "ZA", "ZM", "ZW"]
 };
 
 export default Moldova;

@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import CheckEligibility from "../../components/shared/CheckEligibility";
+import { motion } from "framer-motion";
+
 
 export default function Hero() {
   const backgroundImages = [
@@ -56,14 +58,24 @@ export default function Hero() {
           style={{ backgroundImage: `url(${src})`, zIndex: -1 }}
         />
       ))}
-      <div>
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          Welcome to UnitedEvisa - Trusted Global Visa Assistant
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent"
+        style={{ zIndex: -1 }} />
+      <motion.div
+        className="backdrop-blur-[64px] bg-white/40 p-8 rounded-2xl max-w-7xl shadow-xl z-10"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">
+          Welcome to <span className="font-extrabold bg-gradient-to-r from-[#16610E]/40 to-[#16610E]/90 bg-clip-text text-transparent">UNITED</span><span className="bg-gradient-to-r from-[#CB6601]/70 to-[#CB6601]/90 bg-clip-text text-transparent">eVisa</span>
         </h1>
-        <p className="text-lg md:text-xl text-white max-w-3xl mx-auto">
-          Simplify the way you get a Visa
+        <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">
+          Trusted Global Visa Assistant
+        </h1>
+        <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+          Simplify the way you get a visa — fast, reliable, and stress-free
         </p>
-      </div>
+      </motion.div>
       <div className="">
         <CheckEligibility />
       </div>

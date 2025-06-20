@@ -5,7 +5,7 @@ import { Country } from "./type"; // optional type if you're using centralized t
 const georgia: Country = {
   slug: 'georgia',
   name: 'Georgia',
-  region: 'Caucasus',
+  region: 'Asia Pacific',
   code: 'ge',
   flagUrl:'/images/country/georgia/georgia-square.png',
   imageUrl: '/images/country/georgia/georgia-bg.jpg',
@@ -123,6 +123,7 @@ const georgia: Country = {
       visaType: "Medical ETA",
     },
   ],
+  eligibleCountries: ["AO", "BF", "BI", "BJ", "BO", "BT", "CD", "CN", "CU", "CV", "DJ", "DM", "EG", "ER", "ET", "FM", "GQ", "GT", "GW", "GY", "HK", "HT", "ID", "IN", "JM", "KI", "KM", "KN", "KP", "LA", "LC", "LS", "MG", "MH", "MN", "MO", "MV", "MW", "MZ", "NA", "PE", "PG", "PH", "PW", "RW", "SB", "SR", "ST", "TG", "TL", "TO", "TT", "TV", "TW", "VN", "VU", "WS", "ZM", "ZW"]
 };
 
 export default georgia;

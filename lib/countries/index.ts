@@ -44,5 +44,16 @@ import indonesia from "./indonesia";
 
 export const COUNTRIES = [kenya, vietnam, canada, kuwait, oman, bahrain, unitedkingdom, saudiarabia, qatar, moldova, uzbekistan, kyrgyzstan, djibouti, gabon, zambia, zimbabwe, rwanda, uganda, tanzania, egypt, ethiopia, sainthelena, southafrica, angola, benin, malawi, cambodia, azerbaijan, australia, laos, india, srilanka, armenia, tajikistan, malaysia, pakistan, newzealand, taiwan, mongolia, hongkong, georgia, kazakhstan, indonesia  ];
 
-export const getCountryBySlug = (slug: string) =>
-  COUNTRIES.find(c => c.slug === slug);
+// Assuming COUNTRIES looks like this:
+// { code: 'VN', name: 'Vietnam' }
+
+export function getCountryBySlug(slug: string) {
+  const normalized = slug.toLowerCase();
+
+  return COUNTRIES.find(
+    (country) =>
+      country.code.toLowerCase() === normalized || // match 2-letter code like 'vn'
+      country.name.toLowerCase().replace(/\s+/g, '-') === normalized // match 'vietnam' (if used as slug)
+  );
+}
+
